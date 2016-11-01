@@ -1,16 +1,20 @@
 var express = require('express');
 var app = express();
+var server = require('http').createServer(app);
+var port = process.env.PORT || 3000;
+
 var path = require('path');
 
 // Define the port to run on
-app.set('port', 8080);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
+
 
 // Listen for requests
-var server = app.listen(app.get('port'), function() {
-    var port = server.address().port;
-    console.log('Magic happens on port ' + port);
+
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
 });
+
 
 var io = require('socket.io')(server);
 
