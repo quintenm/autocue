@@ -3,7 +3,7 @@ var app = express();
 var path = require('path');
 
 // Define the port to run on
-app.set('port', 3000);
+app.set('port', 8080);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Listen for requests
