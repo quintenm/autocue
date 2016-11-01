@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/styles.min.css" media="screen" title="no title">
+  <!-- <link rel="stylesheet" href="css/reader.min.css" media="screen" title="no title"> -->
+</head>
+
+<body>
+  <section id="firstScreen">
+    <p>
+      <a href="#writerScreen">writer</a>
+      <a href="#readerScreen">reader</a>
+    </p>
+  </section>
+  <section id="writerScreen" class="hidden">
+    <div class="messagesWrite">
+      <div><p contenteditable="true">Add in the textbox your text</p></div>
+      <div><p contenteditable="true">It wil be displayed in Reader.</p></div>
+    </div>
+    <div>
+    <form id="inputForm" action="">
+      <input id="m" autocomplete="off" />
+      <button class="hidden">Send</button>
+    </form>
+  </div>
+  </section>
+  <section id="readerScreen" class="hidden">
+    <div class="messagesRead">
+      <div><p>Add in Writer your text</p></div>
+      <div><p>It wil be displayed here.</p></div>
+    </div>
+  </section>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>
