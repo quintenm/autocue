@@ -1,7 +1,7 @@
 # DigiPromp
-A  text writer/reader for fast one-way communication:
+A  text writer/reader for fast one-way communication
 
-As exemplified by:
+For use with
 Live interview (for internet) or Presentation
 
 # Project
