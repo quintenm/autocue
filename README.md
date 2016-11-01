@@ -13,15 +13,16 @@ Live interview (for internet) or Presentation
 * Insert text in the highlighted section (Writer)
 * Display live the entered text in Writer (Reader)
 
+# What it will do in future
+* Communicate with an secure PIN.
+* Switch fast between Writer and Reader
+* Set somme customisation, such as Font-family, hightlighted color, scroll type, scroll trigger (keyboard)
+
 # Short ToDo's for the future
 * Redesign layout
 * Make font scale with browser width
 * Fast input a list of questions, based on markdown
 
-# What it will do in future
-* Communicate with an secure PIN.
-* Switch fast between Writer and Reader
-* Set somme customisation, such as Font-family, hightlighted color, scroll type, scroll trigger (keyboard)
 
 # Somme side notes
 * With every page refresh all the input is lost
