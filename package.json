@@ -1,11 +1,14 @@
 {
   "name": "DigiPromp",
-  "version": "1.0.0",
+  "version": "0.6.2",
   "description": "",
   "main": "server.js",
   "dependencies": {
     "socket.io": "^1.5.1",
     "express": "^4.14.0"
+  },
+  "engines": {
+    "node": "4.1.0"
   },
   "scripts": {"start": "node server.js"},
   "devDependencies": {},
@@ -14,6 +17,6 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Quinten Mares",
   "license": "ISC"
 }
