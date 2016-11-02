@@ -33,7 +33,7 @@ Live interview (for internet) or Presentation
 * NodeJS v4.1
 * Express v4.14
 * Socket.io v1.5.1
-* Lorempixel.com
+* fontawesome.com
 
 # How to install it
 1. Install nodejs and npm (install Xcode if necessary)

@@ -4,37 +4,106 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" href="css/styles.min.css" media="screen" title="no title">
+  <link rel="stylesheet" href="css/styles.min.css" media="screen">
+  <link rel="stylesheet" href="css/main.min.css" media="screen" id="varCss">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- <link rel="stylesheet" href="css/reader.min.css" media="screen" title="no title"> -->
 </head>
 
 <body>
   <section id="firstScreen">
-    <p>
-      <a href="#writerScreen">writer</a>
-      <a href="#readerScreen">reader</a>
-    </p>
+    <div class="backgroundImage">
+      <h1>DigiPromp</h1>
+    </div>
+    <div class="content">
+      <h3>
+        A text writer/reader for fast one-way communication
+      </h3>
+      <hr>
+      <button href="#writerScreen" class="sectionNavigation">writer</button>
+      <button href="#readerScreen" class="sectionNavigation">reader</button>
+      <hr>
+      <p id="options-button">Options <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+      <span id="options-list" style="display: none;">
+        <div class="dropdown">
+          <button class="dropbtn">Font Color</button>
+          <div class="dropdown-content">
+            <a href="#">Black <span>(default)</span></a>
+            <a href="#">White</a>
+            <a href="#">Red</a>
+            <a href="#">Green</a>
+            <a href="#">Blue</a>
+            <a href="#">Yellow</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Background Color</button>
+          <div class="dropdown-content">
+            <a href="#">White <span>(default)</span></a>
+            <a href="#">Black</a>
+            <a href="#">Red</a>
+            <a href="#">Green</a>
+            <a href="#">Blue</a>
+            <a href="#">Yellow</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">font-family</button>
+          <div class="dropdown-content">
+            <a href="#">Serif <span>(default)</span></a>
+            <a href="#">Sans-serif</a>
+            <a href="#">dislexia</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Write style</button>
+          <div class="dropdown-content">
+            <a href="#">Just scroll <span>(default)</span></a>
+            <a href="#">Stick scroll</a>
+            <a href="#">Cards</a>
+          </div>
+        </div>
+      </span>
+      <footer><a href="http://quinten.mares.be" target="_blank">quinten.mares.be</a> &copy; 2016</footer>
+    </div>
   </section>
   <section id="writerScreen" class="hidden">
     <div class="messagesWrite">
-      <div><p contenteditable="true">Add in the textbox your text</p></div>
-      <div><p contenteditable="true">It wil be displayed in Reader.</p></div>
+      <div>
+        <p>
+          <button href="#firstScreen" class="sectionNavigation">Go back to main page</button><br>
+          Add in the active textbox your text
+        </p>
+      </div>
+      <div>
+        <p>It wil be displayed in Reader.</p>
+      </div>
     </div>
     <div>
-    <form id="inputForm" action="">
-      <input id="m" autocomplete="off" />
-      <button class="hidden">Send</button>
-    </form>
-  </div>
+      <form id="inputForm" action="">
+        <input id="m" autocomplete="off" />
+        <button class="hidden">Send</button>
+      </form>
+    </div>
   </section>
   <section id="readerScreen" class="hidden">
     <div class="messagesRead">
-      <div><p>Add in Writer your text</p></div>
-      <div><p>It wil be displayed here.</p></div>
+      <div>
+        <p>
+          <button href="#firstScreen" class="sectionNavigation">Go back to main page</button><br>
+          Add in Writer your text
+        </p>
+      </div>
+      <div>
+        <p>It wil be displayed here.</p>
+      </div>
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="https://use.fontawesome.com/6517cff0d0.js"></script>
   <script src="js/main.js" charset="utf-8"></script>
 </body>
+
 </html>

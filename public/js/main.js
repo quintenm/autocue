@@ -1,18 +1,24 @@
 $(function() {
-  $("#firstScreen a").click(function(e){
+  $("button.sectionNavigation").click(function(e){
     e.preventDefault();
     var a = $(this).attr('href');
     $("#firstScreen,#readerScreen,#writerScreen").addClass('hidden');
     $(a).removeClass('hidden');
     if(a == "#readerScreen"){
-      $('head').append('<link rel="stylesheet" href="css/reader.min.css" media="screen" title="no title">');
+      $('#varCss').attr('href', 'css/reader.min.css');
     }else if(a== "#writerScreen"){
-      $('head').append('<link rel="stylesheet" href="css/writer.min.css" media="screen" title="no title">');
+      $('#varCss').attr('href', 'css/writer.min.css');
+      $('#m').focus();
+    }else if(a== "#firstScreen"){
+      $('#varCss').attr('href', 'css/main.min.css');
       $('#m').focus();
     } else {
       alert(a);
     }
-
+  });
+  $("#options-button").click(function(e){
+    e.preventDefault();
+    $('#options-list').slideToggle();
   });
 
     var socket = io();

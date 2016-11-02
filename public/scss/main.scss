@@ -1,0 +1,132 @@
+$martphone: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+
+body,html
+{
+  font-family: "Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif";
+}
+
+div:not(.dropdown,.dropdown *)
+{
+  width:100vw;
+  min-height:100vh;
+}
+
+#firstScreen
+{
+    .backgroundImage
+    {
+      background-color:rgb(219, 219, 219);
+      background-image: url('../media/old_pic.jpg');
+      background-size:cover;
+      background-position:center center;
+      display:table;
+
+      position: fixed;
+      top: 0;
+      h1
+      {
+        font-size: 15vw;
+        color:white;
+        text-align:center;
+        vertical-align:middle;
+        display:table-cell;
+        font-weight:900;
+      }
+    }
+    .content
+    {
+      width:100vw;
+      min-height:100vh;
+      text-align:center;
+      padding: 10vh 2vw;
+      box-sizing: border-box;
+      position: absolute;
+      margin-top: 100vh;
+      background: white;
+      h3
+      {
+        font-size:4vw;
+        width: 50vw;
+        margin:auto;
+        text-align:center;
+      }
+      p
+      {
+        font-size:2vw;
+        width: 50vw;
+        margin:auto;
+        text-align:center;
+      }
+      button
+      {
+        &.dropbtn
+        {
+          padding:.4vh .7vw;
+          min-height:5vh;
+          border-width:.15em;
+          @media #{$desktop} {
+            min-width:20vw;
+            margin: 0;
+          }
+          @media #{$tablet} {
+            min-width:20vw;
+            margin: 0;
+          }
+          @media #{$martphone} {
+            min-width:40vw;
+            margin: 0 2vw;
+          }
+        }
+      }
+      .dropdown
+      {
+        position: relative;
+        display: inline-block;
+        margin-top:4vh;
+        .dropdown-content
+        {
+          display: none;
+          position: absolute;
+          width: 100%;
+          z-index:2;
+          box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+          height: 182.7px;
+          overflow-y: auto;
+          a
+          {
+            padding: 1rem 1rem;
+            display: block;
+            color:black;
+            text-decoration:none;
+            span
+            {
+              font-size:1.2vw;
+              font-weight:200;
+            }
+            &:nth-of-type(2n)
+            {
+              background-color:#fafafa;
+            }
+            &:nth-of-type(2n-1)
+            {
+              background-color:#e8e8e8;
+            }
+          }
+        }
+        &:hover .dropdown-content
+        {
+          display: block;
+        }
+      }
+    }
+    footer
+    {
+      margin-top: 10vh;
+      a
+      {
+        color:black;
+      }
+    }
+}
