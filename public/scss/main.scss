@@ -1,8 +1,10 @@
-$martphone: "(max-width: 767px)";
+$smartphone: "(max-width: 767px)";
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
+$portrait: "(orientation: portrait)";
+$landscape: "(orientation: landscape)";
 
-div:not(.dropdown,.dropdown *)
+div:not(.dropdown,.alert,.dropdown *)
 {
   width:100vw;
   min-height:100vh;
@@ -98,7 +100,7 @@ div:not(.dropdown,.dropdown *)
             min-width:20vw;
             margin: 0;
           }
-          @media #{$martphone} {
+          @media #{$smartphone} {
             min-width:40vw;
             margin: 0 2vw;
           }
@@ -108,8 +110,23 @@ div:not(.dropdown,.dropdown *)
       {
         //position: relative;
         display: inline-block;
-        margin-top:4vh;
-        margin-bottom:10vh;
+        @media #{$smartphone} {
+          width: 100%;
+          margin-top:4vh;
+          margin-bottom:3vh;
+        }
+        @media #{$smartphone} and #{$landscape}
+        {
+          margin-bottom:7vw;
+        }
+        @media #{$tablet} {
+          margin-top:4vh;
+          margin-bottom:10vh;
+        }
+        @media #{$desktop} {
+          margin-top:4vh;
+          margin-bottom:12vh;
+        }
         button
         {
           font-size:1.5em;
@@ -126,6 +143,7 @@ div:not(.dropdown,.dropdown *)
             padding: 1rem 1rem;
             display: inline-block;
             margin:.5rem 1rem 1rem 1rem;
+            font-size:3vw;
             span
             {
               font-size:1.2vw;
@@ -140,6 +158,22 @@ div:not(.dropdown,.dropdown *)
         &:hover .dropdown-content
         {
           display: block;
+        }
+      }
+      #help-list
+      {
+        margin-top:2vw;
+        p
+        {
+          line-height: 1.2;
+        }
+        span
+        {
+          font-size: .6rem;
+          border: 3px solid black;
+          padding: 2px 10px;
+          margin:0 5px;
+          border-radius: 5px;
         }
       }
     }

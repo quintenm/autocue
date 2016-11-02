@@ -24,6 +24,10 @@
 {
   .font-color-#{$type}
   {
+    .alert
+    {
+      background-color:$color;
+    }
     #firstScreen .content
       {
         .dropdown button .dropdown-content a.active
@@ -69,7 +73,10 @@
 {
   .background-color-#{$type}
   {
-
+    .alert p
+    {
+      color: $color;
+    }
     section, #firstScreen .content
     {
       background: $color;

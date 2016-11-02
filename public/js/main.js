@@ -24,13 +24,21 @@ $(function() {
       localStorage.setItem('styles', a);
     }else if(a == "#reset"){
       $("body").removeAttr('class').addClass('font-color-primary background-color-primary font-family-secundary');
+    }else if(a == "#alertClose"){
+      $(".alert").hide();
     } else {
-      alert(a);
+      alert(a + ": Report to developer");
     }
   });
   $("#options-button").click(function(e){
     e.preventDefault();
+    $('#help-list').hide();
     $('#options-list').slideToggle();
+  });
+  $("#help-button").click(function(e){
+    e.preventDefault();
+    $('#options-list').hide();
+    $('#help-list').slideToggle();
   });
   $(".dropdown-content a").click(function(e){
     e.preventDefault();
@@ -50,6 +58,42 @@ $(function() {
     }
     $('body').addClass(a);
   });
+  var readPosition = 0;
+  $(document).keydown(function(e) {
+    if(!$('#readerScreen').hasClass("hidden")){
+      e.preventDefault();
+      switch(e.which) {
+          case 65: // character a
+          case 81: // character q
+          case 70: // character f
+          case 37: // left
+          case 38: // up
+            if(readPosition != "0"){
+              readPosition--;
+            }
+            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
+          break;
+
+          case 69: // character e
+          case 68: // character d
+          case 74: // character j
+          case 39: // right
+          case 40: // down
+          case 32: // spacebar
+            if(readPosition != ($(".messagesRead div").length - 1)){
+              readPosition++;
+            }
+            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
+          break;
+
+          case 13: // return
+            $('.alert').show();
+          break;
+
+          default: return; // exit this handler for other keys
+      }
+    }
+  });
 
     var socket = io();
     $('form').submit(function() {
@@ -62,7 +106,5 @@ $(function() {
       $('.messagesRead').append('<div><p>'+ msg +'</p></div>');
       $('#m').focus();
     });
-
-
 
 });

@@ -53,3 +53,22 @@ a
   //color:black;//VARIABLE
   text-decoration: none;
 }
+.alert
+{
+  position:fixed;
+  z-index:10;
+  top:0;
+  left:0;
+  right:0;
+  width:100vw;
+  height:15vh;
+  display:table;
+  font-weight:900;
+  text-align:center;
+  p
+  {
+    font-size: 4.5vw;
+    display:table-cell;
+    vertical-align:middle;
+  }
+}
