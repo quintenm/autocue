@@ -2,11 +2,6 @@ $martphone: "(max-width: 767px)";
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
 
-body,html
-{
-  font-family: "Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif";
-}
-
 div:not(.dropdown,.dropdown *)
 {
   width:100vw;
@@ -17,7 +12,6 @@ div:not(.dropdown,.dropdown *)
 {
     .backgroundImage
     {
-      background-color:rgb(219, 219, 219);
       background-image: url('../media/old_pic.jpg');
       background-size:cover;
       background-position:center center;
@@ -29,6 +23,7 @@ div:not(.dropdown,.dropdown *)
       {
         font-size: 15vw;
         color:white;
+        font-family:"Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif";
         text-align:center;
         vertical-align:middle;
         display:table-cell;
@@ -43,11 +38,10 @@ div:not(.dropdown,.dropdown *)
 
       box-sizing: border-box;
       position: relative; //absolute;
-      background: white;
+      //background: white;//VARABLE
       &:nth-of-type(2n)
       {
         margin-top: 90vh;
-
       }
       &:nth-of-type(2n - 1)
       {
@@ -64,6 +58,10 @@ div:not(.dropdown,.dropdown *)
         margin-bottom:10vh;
         text-align: center;
         opacity:.5;
+        p
+        {
+          color:white;
+        }
       }
       h3
       {
@@ -122,8 +120,6 @@ div:not(.dropdown,.dropdown *)
             padding: 1rem 1rem;
             display: inline-block;
             margin:.5rem 1rem 1rem 1rem;
-            color: black;
-            text-decoration: none;
             span
             {
               font-size:1.2vw;
@@ -131,7 +127,7 @@ div:not(.dropdown,.dropdown *)
             }
             &.active
             {
-              background-color:#bbbbbb;
+              //background-color:rgba(black,.5);//VARIABLE
             }
           }
         }
@@ -144,9 +140,5 @@ div:not(.dropdown,.dropdown *)
     footer
     {
       margin-top: 10vh;
-      a
-      {
-        color:black;
-      }
     }
 }

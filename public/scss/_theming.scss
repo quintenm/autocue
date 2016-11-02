@@ -1,0 +1,90 @@
+
+  $font-color: (
+    'primary': black,
+    'secundary': white,
+    'tertiary': red,
+    'quaternary': green,
+    'quinary': blue,
+    'senary': yellow
+  ) !default;
+  $background-color: (
+    'primary': white,
+    'secundary': black,
+    'tertiary': red,
+    'quaternary': green,
+    'quinary': blue,
+    'senary': yellow
+  ) !default;
+  $font-family: (
+    'primary': ("Times New Roman","Times", "Serif"),
+    'secundary': ("Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif"),
+    'tertiary': 'dislexia'
+  ) !default;
+
+@each $type, $color in $font-color
+{
+  .font-color-#{$type}
+  {
+    #firstScreen .content
+      {
+        .dropdown button .dropdown-content a.active
+        {
+          background-color:rgba($color,.5);
+        }
+      }
+    hr
+    {
+      border-bottom:.2em solid $color;
+    }
+    button
+    {
+      border-color: $color;
+      &,
+      &:link,
+      &:hover,
+      &:active,
+      &:visited
+      {
+        color:$color;
+      }
+    }
+    p,
+    h3,
+    footer
+    {
+      color:$color;
+    }
+    a
+    {
+      &,&:hover,&:active,&:visited,&:link{
+        color:$color;
+      }
+    }
+  }
+}
+@each $type, $color in $background-color
+{
+  .background-color-#{$type}
+  {
+
+    section, #firstScreen .content
+    {
+      background: $color;
+    }
+    button
+    {
+      background-color:$color;
+    }
+  }
+}
+@each $type, $font in $font-family
+{
+  body,html
+  {
+    &.font-family-#{$type}
+    {
+      font-family: $font;
+
+    }
+  }
+}

@@ -20,6 +20,24 @@ $(function() {
     e.preventDefault();
     $('#options-list').slideToggle();
   });
+  $(".dropdown-content a").click(function(e){
+    e.preventDefault();
+    var a = $(this).data('href');
+    if (a.match("^font-color-*")) {
+      $("body[class*='font-color-']").removeClass (function (index, css) {
+         return (css.match (/(^|\s)font-color-\S+/g) || []).join(' ');
+      });
+    }else if (a.match("^background-color-*")) {
+      $("body[class*='background-color-']").removeClass (function (index, css) {
+         return (css.match (/(^|\s)background-color-\S+/g) || []).join(' ');
+      });
+    }else if (a.match("^font-family-*")) {
+      $("body[class*='font-family-']").removeClass (function (index, css) {
+         return (css.match (/(^|\s)font-family-\S+/g) || []).join(' ');
+      });
+    }
+    $('body').addClass(a);
+  });
 
     var socket = io();
     $('form').submit(function() {
