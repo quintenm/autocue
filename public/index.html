@@ -16,9 +16,12 @@
     <div class="backgroundImage">
       <h1>DigiPromp</h1>
     </div>
+    <div class="content scroller">
+      <p>Scroll down <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+    </div>
     <div class="content">
       <h3>
-        A text writer/reader for fast one-way communication
+        A text writer/reader for a fast one-way communication
       </h3>
       <hr>
       <button href="#writerScreen" class="sectionNavigation">writer</button>
@@ -29,7 +32,7 @@
         <div class="dropdown">
           <button class="dropbtn">Font Color</button>
           <div class="dropdown-content">
-            <a href="#">Black <span>(default)</span></a>
+            <a href="#" class="active">Black <span>(default)</span></a>
             <a href="#">White</a>
             <a href="#">Red</a>
             <a href="#">Green</a>
@@ -40,7 +43,7 @@
         <div class="dropdown">
           <button class="dropbtn">Background Color</button>
           <div class="dropdown-content">
-            <a href="#">White <span>(default)</span></a>
+            <a href="#" class="active">White <span>(default)</span></a>
             <a href="#">Black</a>
             <a href="#">Red</a>
             <a href="#">Green</a>
@@ -51,7 +54,7 @@
         <div class="dropdown">
           <button class="dropbtn">font-family</button>
           <div class="dropdown-content">
-            <a href="#">Serif <span>(default)</span></a>
+            <a href="#" class="active">Serif <span>(default)</span></a>
             <a href="#">Sans-serif</a>
             <a href="#">dislexia</a>
           </div>
@@ -59,7 +62,7 @@
         <div class="dropdown">
           <button class="dropbtn">Write style</button>
           <div class="dropdown-content">
-            <a href="#">Just scroll <span>(default)</span></a>
+            <a href="#" class="active">Just scroll <span>(default)</span></a>
             <a href="#">Stick scroll</a>
             <a href="#">Cards</a>
           </div>
@@ -72,12 +75,11 @@
     <div class="messagesWrite">
       <div>
         <p>
-          <button href="#firstScreen" class="sectionNavigation">Go back to main page</button><br>
-          Add in the active textbox your text
+          <button href="#firstScreen" class="sectionNavigation">Go back</button>
         </p>
       </div>
       <div>
-        <p>It wil be displayed in Reader.</p>
+        <p>Add in the active textbox your text.<br> It wil be displayed in Reader.</p>
       </div>
     </div>
     <div>
@@ -91,12 +93,13 @@
     <div class="messagesRead">
       <div>
         <p>
-          <button href="#firstScreen" class="sectionNavigation">Go back to main page</button><br>
-          Add in Writer your text
+          <button href="#firstScreen" class="sectionNavigation">Go back</button><br>
+          <span style="font-size: .5em;">Scroll down <i class="fa fa-angle-down" aria-hidden="true"></i></span>
         </p>
       </div>
       <div>
-        <p>It wil be displayed here.</p>
+        <p>Add in Writer your text.<br>
+          It wil be displayed here.</p>
       </div>
     </div>
   </section>

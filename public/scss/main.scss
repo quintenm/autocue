@@ -40,15 +40,35 @@ div:not(.dropdown,.dropdown *)
       width:100vw;
       min-height:100vh;
       text-align:center;
-      padding: 10vh 2vw;
+
       box-sizing: border-box;
-      position: absolute;
-      margin-top: 100vh;
+      position: relative; //absolute;
       background: white;
+      &:nth-of-type(2n)
+      {
+        margin-top: 90vh;
+
+      }
+      &:nth-of-type(2n - 1)
+      {
+        padding: 10vh 2vw;
+
+      }
+      &.scroller
+      {
+        max-height: 0;
+        min-height: 0;
+        vertical-align: baseline;
+        width: 100vw;
+        color:white;
+        margin-bottom:10vh;
+        text-align: center;
+        opacity:.5;
+      }
       h3
       {
-        font-size:4vw;
-        width: 50vw;
+        font-size:4.5vw;
+        width: 80vw;
         margin:auto;
         text-align:center;
       }
@@ -82,36 +102,36 @@ div:not(.dropdown,.dropdown *)
       }
       .dropdown
       {
-        position: relative;
+        //position: relative;
         display: inline-block;
         margin-top:4vh;
+        margin-bottom:4vh;
+        button
+        {
+          font-size:1.5em;
+        }
         .dropdown-content
         {
           display: none;
           position: absolute;
-          width: 100%;
+          left:0;
+          width: 100vw;
           z-index:2;
-          box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
-          height: 182.7px;
-          overflow-y: auto;
           a
           {
             padding: 1rem 1rem;
-            display: block;
-            color:black;
-            text-decoration:none;
+            display: inline-block;
+            margin:.5rem 1rem 1rem 1rem;
+            color: black;
+            text-decoration: none;
             span
             {
               font-size:1.2vw;
               font-weight:200;
             }
-            &:nth-of-type(2n)
+            &.active
             {
-              background-color:#fafafa;
-            }
-            &:nth-of-type(2n-1)
-            {
-              background-color:#e8e8e8;
+              background-color:#bbbbbb;
             }
           }
         }
