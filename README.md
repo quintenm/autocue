@@ -1,5 +1,5 @@
 # DigiPromp
-A  text writer/reader for fast one-way communication
+A  text writer/reader for a fast one-way communication
 
 For use with
 Live interview (for internet) or Presentation
@@ -15,17 +15,14 @@ Live interview (for internet) or Presentation
 * Switch fast between Writer and Reader
 * Set somme customisation, such as Font-family (almost done), hightlighted color, background-color
 * Font scales with browser width
-
-
+* Save customisation and reset it, localStorage bassed
 
 # What it will do in future
 * Communicate with an secure PIN.
 * Set somme customisation, such as Font-family(almost done), scroll type, scroll trigger (keyboard)
 
-
 # Short ToDo's for the future
 * Fast input a list of questions, based on markdown
-
 
 # Somme side notes
 * With every page refresh all the input is lost
@@ -36,7 +33,7 @@ Live interview (for internet) or Presentation
 * NodeJS v4.1
 * Express v4.14
 * Socket.io v1.5.1
-* fontawesome.com
+* fontawesome.io
 
 # How to install it
 1. Install nodejs and npm (install Xcode if necessary)

@@ -1,17 +1,29 @@
 $(function() {
+  if(localStorage.getItem("styles") !== null || localStorage.getItem("styles") != null)
+  {
+    var a = localStorage.getItem('styles');
+    $("body").removeAttr('class').addClass(a);
+  }
   $("button.sectionNavigation").click(function(e){
     e.preventDefault();
     var a = $(this).attr('href');
-    $("#firstScreen,#readerScreen,#writerScreen").addClass('hidden');
-    $(a).removeClass('hidden');
+    if(a == "#readerScreen"|| a == "#writerScreen" || a == "#firstScreen")
+    {
+      $("#firstScreen,#readerScreen,#writerScreen").addClass('hidden');
+      $(a).removeClass('hidden');
+    }
     if(a == "#readerScreen"){
       $('#varCss').attr('href', 'css/reader.min.css');
     }else if(a== "#writerScreen"){
       $('#varCss').attr('href', 'css/writer.min.css');
-      $('#m').focus();
+      $//('#m').focus();
     }else if(a== "#firstScreen"){
       $('#varCss').attr('href', 'css/main.min.css');
-      $('#m').focus();
+    }else if(a == "#save"){
+      var a = $("body").attr('class');
+      localStorage.setItem('styles', a);
+    }else if(a == "#reset"){
+      $("body").removeAttr('class').addClass('font-color-primary background-color-primary font-family-secundary');
     } else {
       alert(a);
     }

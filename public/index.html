@@ -6,7 +6,7 @@
   <title></title>
   <link rel="stylesheet" href="css/styles.min.css" media="screen">
   <link rel="stylesheet" href="css/main.min.css" media="screen" id="varCss">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
   <!-- <link rel="stylesheet" href="css/reader.min.css" media="screen" title="no title"> -->
 </head>
@@ -56,7 +56,6 @@
           <div class="dropdown-content">
             <a href="#" data-href="font-family-primary" class="active">Serif <span>(default)</span></a>
             <a href="#" data-href="font-family-secundary">Sans-serif</a>
-            <a href="#" data-href="font-family-tertiary">Dislexia</a>
           </div>
         </div>
         <div class="dropdown">
@@ -67,6 +66,8 @@
             <a href="#">Cards</a>
           </div>
         </div>
+        <button href="#save" class="sectionNavigation">Save</button>
+        <button href="#reset" class="sectionNavigation buttonExeption">Reset</button>
       </span>
       <footer><a href="http://quinten.mares.be" target="_blank">quinten.mares.be</a> &copy; 2016</footer>
     </div>
@@ -84,7 +85,7 @@
     </div>
     <div>
       <form id="inputForm" action="">
-        <input id="m" autocomplete="off" />
+        <input id="m" autocomplete="off" placeholder="Click to type ..." />
         <button class="hidden">Send</button>
       </form>
     </div>

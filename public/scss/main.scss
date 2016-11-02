@@ -79,6 +79,12 @@ div:not(.dropdown,.dropdown *)
       }
       button
       {
+        &.buttonExeption
+        {
+          background:white!important;
+          border-color:black!important;
+          color:black!important;
+        }
         &.dropbtn
         {
           padding:.4vh .7vw;
@@ -103,7 +109,7 @@ div:not(.dropdown,.dropdown *)
         //position: relative;
         display: inline-block;
         margin-top:4vh;
-        margin-bottom:4vh;
+        margin-bottom:10vh;
         button
         {
           font-size:1.5em;
