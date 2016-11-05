@@ -1,5 +1,5 @@
 # DigiPromp
-A  text writer/reader for a fast one-way communication
+A  digital autocue for a fast one-way communication
 
 For use with
 Live interview (for internet) or Presentation
@@ -24,6 +24,7 @@ Live interview (for internet) or Presentation
 
 # Short ToDo's for the future
 * Fast input a list of questions, based on markdown
+* Auto insert comments from social media
 
 # Somme side notes
 * With every page refresh all the input is lost
