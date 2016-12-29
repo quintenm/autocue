@@ -52,15 +52,16 @@ div:not(.dropdown,.alert,.dropdown *)
           font-size:3vw;
           outline:none;
           border-radius:5px;
+          border-width:.15em;
+          border-style:solid;
           &.room
           {
+            border-color:rgba(235,235,235,1);
             background-color:rgba(235,235,235,1);
           }
           &.submit
           {
-            border-width:5px;
             border-color:black;
-            border-style:solid;
             background-color:white;
             cursor:pointer;
           }
