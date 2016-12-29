@@ -1,4 +1,12 @@
 $(function() {
+  var arrAnimals = ["ant","bird"," cat","chicken","cow","dog","elephant","fish","fox","horse","kangaroo","lion","monkey","penguin","pig","rabbit","sheep","tiger","whale","wolf","zebra"];
+  function token() {
+  	var randAnimal = arrAnimals[Math.floor(Math.random() * arrAnimals.length)].toLowerCase();
+    var number = Math.floor(Math.random() * 1000) + 1;
+
+  	return randAnimal +""+ number;
+  }
+  $('#room').val(token);
   if(localStorage.getItem("styles") !== null || localStorage.getItem("styles") != null)
   {
     var a = localStorage.getItem('styles');
@@ -95,9 +103,17 @@ $(function() {
     }
   });
 
+var socket = io.connect();
     var socket = io();
-    $('form').submit(function() {
-      socket.emit('chat message', $('#m').val());
+    var room = $('#room').val();
+
+    socket.on('connect', function() {
+      // Connected, let's sign-up for to receive messages for this room
+      socket.emit('room', room);
+    });
+
+    $('#inputForm').submit(function() {
+      socket.emit('chat message', { room: room, msg: $('#m').val()});
       $('#m').val('');
       return false;
     });
@@ -106,5 +122,32 @@ $(function() {
       $('.messagesRead').append('<div><p>'+ msg +'</p></div>');
       $('#m').focus();
     });
+
+
+
+
+    $('#createRoom').click(function(e){
+      e.preventDefault();
+
+      var roomId = $('#room').val();
+      socket.emit('room',roomId);
+
+    });
+
+
+    // $("#roomsubmit").submit(function(e) {
+    //   e.preventDefault();
+    //   var name = $("#name").val();
+
+    //   var device = navigator.userAgent;
+    //
+    //   if (name === "" || name.length < 2) {
+    //
+    //     console.log("Please enter a name");
+    //   } else {
+    //     socket.to(room);
+    //     $("#m").focus();
+    //   }
+    // });
 
 });

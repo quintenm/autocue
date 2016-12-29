@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="css/main.min.css" media="screen" id="varCss">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-  <!-- <link rel="stylesheet" href="css/reader.min.css" media="screen" title="no title"> -->
 </head>
 
 <body class="font-color-primary background-color-primary font-family-secundary">
+
+
   <section id="firstScreen">
     <div class="backgroundImage">
       <h1>DigiPromp</h1>
@@ -23,6 +24,10 @@
       <h3>
       A digital autocue for a fast one-way communication
       </h3>
+      <hr>
+      <h4>Room name</h4>
+      <input type="text" class="input room" name="firstname" id="room" value="mickey1928">
+      <input type="button" class="input submit" value="join" id="createRoom">
       <hr>
       <button href="#writerScreen" class="sectionNavigation">Writer</button>
       <button href="#readerScreen" class="sectionNavigation">Reader</button>
@@ -88,7 +93,7 @@
   </section>
   <section id="writerScreen" class="hidden">
     <div class="alert" style="display: none;">
-      <p>Er is een probleem gemeld<button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button></p>
+      <p>There is a problem reported<button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button></p>
     </div>
     <div class="messagesWrite">
       <div>

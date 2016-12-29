@@ -18,6 +18,8 @@ div:not(.dropdown,.alert,.dropdown *)
       background-size:cover;
       background-position:center center;
       display:table;
+      width:100vw;
+      min-height:100vh;
 
       position: fixed;
       top: 0;
@@ -41,6 +43,28 @@ div:not(.dropdown,.alert,.dropdown *)
       box-sizing: border-box;
       position: relative; //absolute;
       //background: white;//VARABLE
+      input
+      {
+        &.input
+        {
+          border:0;
+          padding: 10px;
+          font-size:3vw;
+          outline:none;
+          border-radius:5px;
+          &.room
+          {
+            background-color:rgba(235,235,235,1);
+          }
+          &.submit
+          {
+            border-width:5px;
+            border-color:black;
+            border-style:solid;
+            background-color:white;
+          }
+        }
+      }
       &:nth-of-type(2n)
       {
         margin-top: 90vh;
