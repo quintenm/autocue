@@ -66,6 +66,9 @@ $(function() {
     }
     $('body').addClass(a);
   });
+  $('#createRoom').click(function(){
+
+  });
   var readPosition = 0;
   $(document).keydown(function(e) {
     if(!$('#readerScreen').hasClass("hidden")){
@@ -95,6 +98,7 @@ $(function() {
           break;
 
           case 13: // return
+            $('.alert-text').text('There is a problem reported');
             $('.alert').show();
           break;
 
@@ -131,23 +135,9 @@ var socket = io.connect();
 
       var roomId = $('#room').val();
       socket.emit('room',roomId);
+      $('.alert-text').text('Room has been created');
+      $('.alert').show();
 
     });
-
-
-    // $("#roomsubmit").submit(function(e) {
-    //   e.preventDefault();
-    //   var name = $("#name").val();
-
-    //   var device = navigator.userAgent;
-    //
-    //   if (name === "" || name.length < 2) {
-    //
-    //     console.log("Please enter a name");
-    //   } else {
-    //     socket.to(room);
-    //     $("#m").focus();
-    //   }
-    // });
 
 });
