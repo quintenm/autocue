@@ -1,4 +1,4 @@
-# DigiPromp
+# Digital Autocue
 A  digital autocue for a fast one-way communication
 
 For use with
@@ -66,7 +66,7 @@ OR
 
 # Online Demo
 You can find a working demo
-[digipromp.herokuapp.com](https://digipromp.herokuapp.com)
+[digitalautocue.herokuapp.com](https://digitalautocue.herokuapp.com)
 
 # Know bug
 - Emergency function, won't send to other devices
