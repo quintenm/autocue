@@ -7,7 +7,7 @@ div
   display: table;
   width:100vw;
   height:25vh;
-p,input
+p,input:not([type=file])
 {
   min-width:94vw;
   min-height:25vh;
@@ -26,7 +26,7 @@ p,input
     background-color:rgba(#EFEFEF,.5);
   }
 }
-input
+input:not([type=file])
 {
   background-color:rgba(#EFEFEF,.2);
 }

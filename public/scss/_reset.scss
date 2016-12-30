@@ -52,3 +52,7 @@ p { display: inline-block; }
 * html p { height: 1%; }
 p { display: block; }
 /* close commented backslash hack */
+button
+{
+  outline: none;
+}

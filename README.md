@@ -4,11 +4,11 @@ A  digital autocue for a fast one-way communication
 For use with
 Live interview (for internet) or Presentation
 
-Version 0.8.1 beta
+Version 1.1.1 alpha
 
 # Project
 * It's a simple side project, based on a simple idea
-* This project is still in beta, but it works perfectly
+* This project is an alpha, there can be still bugs, bug-reporting will be appreciated.
 * You can download it, it's free, but please leave somme suggestions for future upgrades
 
 # What it can do
@@ -20,17 +20,14 @@ Version 0.8.1 beta
 * Font scales with browser width
 * Save customisation and reset it, localStorage based
 * Keyboard trigger for scrolling or emergency call to writer
+* Upload txt-file with autocue text for a fast input.
 
 # What it will do in future
-* Customisation, such as scroll type
-
-# Short ToDo's for the future
-* Fast input a list of questions, based on markdown
+* Customisation, such as reading scroll type
 * Auto insert comments from social media
 
 # Somme side notes
 * With every page refresh all the input is lost
-* It's still in beta BUT IT WORKS
 
 # Used libraries
 * jQuery v1.12.4
@@ -48,16 +45,26 @@ Version 0.8.1 beta
 + Discover ...
 
 # How to use it
-* Load page on serveral devices
-* A room will be created automatically, you can rename it, confirm by clicking ** join **
-* Be sure that all other devices have the same room name.
-* Click on writer and insert your text, by pressing the `enter-key`
+* Load webpage on serveral devices
+* A **room** will be created automatically, you can rename it, confirm by clicking ** join **
+* Be sure that all other devices joined the same room.
+* Click on **Writer** and insert your text, by pressing the `enter-key`
+* You can upload an txt-file via **Upload autocue** see the demofile as example.
 
 OR
 
-* Click on Reader and go trough the text.
+* Click on **Reader** and go trough the text.
 
-# Controls
+# Extra
+
+## Style
+* Change default background color;
+* Change default font color
+* Change default font family
+* Change default display style in Reader (currently disabled)
+* Save or restore settings
+
+## Controls
 - Keypress Previous slide `A`, `Q`, `F`, `Left arrow key`, `Up arrow key`
 - Keypress Next slide `E`, `D`, `J`, `Right arrow key`, `Down arrow key`, `Spacebar key`
 - Keypress Emergency `Return key`

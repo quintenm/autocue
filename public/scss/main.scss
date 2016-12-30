@@ -4,14 +4,16 @@ $desktop: "(min-width: 1024px)";
 $portrait: "(orientation: portrait)";
 $landscape: "(orientation: landscape)";
 
-div:not(.dropdown,.alert,.dropdown *)
+div:not(.dropdown,.alert,.dropdown *, .part)
 {
   width:100vw;
   min-height:100vh;
 }
 
+
 #firstScreen
 {
+  //overflow-x:hidden;
     .backgroundImage
     {
       background-image: url('../media/old_pic.jpg');
@@ -23,15 +25,32 @@ div:not(.dropdown,.alert,.dropdown *)
 
       position: fixed;
       top: 0;
-      h1
+      .title
       {
-        font-size: 15vw;
-        color:white;
-        font-family:"Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif";
-        text-align:center;
-        vertical-align:middle;
+        vertical-align: middle;
+
         display:table-cell;
-        font-weight:900;
+        h1
+        {
+          font-size: 15vw;
+          color:white;
+          font-family:"Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif";
+          text-align:center;
+          vertical-align: middle;
+          display:table-row;
+          font-weight:900;
+        }
+        h3
+        {
+          font-size:4.5vw;
+          width: 80vw;
+          margin:auto;
+          text-align:center;
+          display:table-row;
+          vertical-align: middle;
+          color: white;
+          font-weight:900;
+        }
       }
     }
     .content
@@ -43,28 +62,27 @@ div:not(.dropdown,.alert,.dropdown *)
       box-sizing: border-box;
       position: relative; //absolute;
       //background: white;//VARABLE
+
+      .navigation
+      {
+        width:20vw;
+        margin:auto;
+        padding: 20px;
+        cursor:pointer;
+      }
       input
       {
         &.input
         {
-          border:0;
-          padding: 10px;
-          font-size:3vw;
+          font-size:2rem;
           outline:none;
           border-radius:5px;
-          border-width:.15em;
+          padding: 2vh 2vw;
+          margin: 4vh 1vw;
+          border-width: .2em;
           border-style:solid;
-          &.room
-          {
-            border-color:rgba(235,235,235,1);
-            background-color:rgba(235,235,235,1);
-          }
-          &.submit
-          {
-            border-color:black;
-            background-color:white;
-            cursor:pointer;
-          }
+          width:40vw;
+
         }
       }
       &:nth-of-type(2n)
@@ -86,18 +104,12 @@ div:not(.dropdown,.alert,.dropdown *)
         margin-bottom:10vh;
         text-align: center;
         opacity:.5;
-        p
+        p a
         {
           color:white;
         }
       }
-      h3
-      {
-        font-size:4.5vw;
-        width: 80vw;
-        margin:auto;
-        text-align:center;
-      }
+
       p
       {
         font-size:2vw;
@@ -175,10 +187,6 @@ div:not(.dropdown,.alert,.dropdown *)
               font-size:1.2vw;
               font-weight:200;
             }
-            &.active
-            {
-              //background-color:rgba(black,.5);//VARIABLE
-            }
           }
         }
         &:hover .dropdown-content
@@ -196,7 +204,9 @@ div:not(.dropdown,.alert,.dropdown *)
         span
         {
           font-size: .6rem;
-          border: 3px solid black;
+          border-width: 3px;
+          border-style: solid;
+
           padding: 2px 10px;
           margin:0 5px;
           border-radius: 5px;

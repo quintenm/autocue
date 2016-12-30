@@ -28,13 +28,23 @@
     {
       background-color:$color;
     }
-    #firstScreen .content
+    input[type=file] {
+      color:$color;
+    }
+    #firstScreen
+    {
+    .navigation span
+    {
+      color: $color;
+    }
+    .content
       {
         .dropdown button .dropdown-content a.active
         {
           background-color:rgba($color,.5);
         }
       }
+    }
     hr
     {
       border-bottom:.2em solid $color;
@@ -67,6 +77,14 @@
         color:$color;
       }
     }
+    #room
+    {
+      color: rgba($color,1);
+
+    }
+    #help-list p span{
+     border-color: $color;
+   }
   }
 }
 @each $type, $color in $background-color
@@ -77,6 +95,13 @@
     {
       color: $color;
     }
+    .uploadpage
+    {
+      background-color:$color;
+    }
+    input[type=file]::before {
+      background-color:$color;
+    }
     section, #firstScreen .content
     {
       background: $color;
@@ -84,6 +109,12 @@
     button
     {
       background-color:$color;
+    }
+    #room
+    {
+      //color: $color;
+      border-color:darken($color,5%);
+      background-color:darken($color,5%);
     }
   }
 }

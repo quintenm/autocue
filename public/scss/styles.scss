@@ -33,10 +33,8 @@ button
   margin: 4vh 1vw;
   border-width: .2em;
   border-style: solid;
-  //border-color: black;//VARIABLE
   font-size:2rem;
   font-weight:500;
-  //background-color:white;//VARIABLE
   cursor:pointer;
   &,
   &:link,
@@ -44,16 +42,14 @@ button
   &:active,
   &:visited
   {
-    //color:black;//VARIABLE
     text-decoration:none;
   }
 }
 a
 {
-  //color:black;//VARIABLE
   text-decoration: none;
 }
-.alert
+.overlay
 {
   position:fixed;
   z-index:10;
@@ -61,14 +57,66 @@ a
   left:0;
   right:0;
   width:100vw;
+  text-align:center;
+}
+.alert
+{
+
   height:15vh;
   display:table;
   font-weight:900;
-  text-align:center;
   p
   {
     font-size: 4.5vw;
     display:table-cell;
     vertical-align:middle;
   }
+}
+.uploadpage
+{
+
+  height:100vh;
+  bottom:0;
+  h3
+  {
+    font-size:3rem;
+    margin-top:25vh;
+    font-weight:900;
+  }
+  input
+  {
+    text-align:center;
+    margin:auto;
+    width:100%;
+    outline:none;
+  }
+}
+input[type=file] {
+    margin: 0 auto;
+    padding-top:2rem;
+    font-size:2rem;
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    &::before {
+      content: 'Upload txt file';
+      display: inline-block;
+      font-size:2rem;
+      outline:none;
+      border-radius:5px;
+      padding: 2vh 10vw;
+      margin: 4vh 1vw;
+      border-width: .2em;
+      border-style:solid;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      background-color:white;
+      display: block;
+      text-align:center;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 7vh;
+    }
 }

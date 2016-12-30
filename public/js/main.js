@@ -34,8 +34,51 @@ $(function() {
       $("body").removeAttr('class').addClass('font-color-primary background-color-primary font-family-secundary');
     }else if(a == "#alertClose"){
       $(".alert").hide();
+    }else if(a == "#uploadpage"){
+      $(".uploadpage").show();
+    }else if(a == "#uploadClose"){
+      $(".uploadpage").hide();
+    } else if(a == "#uploadButton"){
+      if (!window.FileReader) {
+          alert('Your browser is not supported')
+      }
+      var input = $('#file').get(0);
+
+      // Create a reader object
+      var reader = new FileReader();
+      if (input.files.length) {
+          var textFile = input.files[0];
+          reader.readAsText(textFile);
+          $(reader).on('load', processFile);
+          $(".uploadpage").hide();
+      } else {
+          alert('Please upload a file before continuing')
+      }
     } else {
+      console.log(a + ": Report to developer");
       alert(a + ": Report to developer");
+    }
+  });
+  function processFile(e) {
+      var file = e.target.result,
+          results;
+      if (file && file.length) {
+          results = file.split("\n");
+          for (index = 0, len = results.length; index < len; ++index) {
+            socket.emit('chat message', { room: room, msg: results[index]});
+          }
+          //$('#name').val(results[0]);
+          //$('#age').val(results[1]);
+      }
+  }
+
+  $('.navigation').click(function(e){
+    if($(this).hasClass('previous')){
+      $('.part2,.navigation.previous').addClass('hidden');
+      $('.part1,.navigation.next').removeClass('hidden');
+    }else if($(this).hasClass('next')){
+      $('.part1,.navigation.next').addClass('hidden');
+      $('.part2,.navigation.previous').removeClass('hidden');
     }
   });
   $("#options-button").click(function(e){
