@@ -1,8 +1,8 @@
 # Digital Autocue
 A  digital autocue for a fast one-way communication
 
-For use with
-Live interview (for internet) or Presentation
+For use and support with
+Live interviews (for internet) or Presentations
 
 Version 1.1.1 alpha
 
@@ -24,7 +24,7 @@ Version 1.1.1 alpha
 
 # What it will do in future
 * Customisation, such as reading scroll type
-* Auto insert comments from social media
+* Auto insert comments from social media (It would be cool)
 
 # Somme side notes
 * With every page refresh all the input is lost
@@ -56,27 +56,26 @@ OR
 * Click on **Reader** and go trough the text.
 
 # Extra
-
-## Style
+### Style
 * Change default background color;
 * Change default font color
 * Change default font family
 * Change default display style in Reader (currently disabled)
 * Save or restore settings
 
-## Controls
+### Controls
 - Keypress Previous slide `A`, `Q`, `F`, `Left arrow key`, `Up arrow key`
 - Keypress Next slide `E`, `D`, `J`, `Right arrow key`, `Down arrow key`, `Spacebar key`
 - Keypress Emergency `Return key`
 
-**Side note**: To use with 2 separated devices, Go to the local ip-adress of your computer with the running server. *Example http://192.168.0.10:3000*
+**Side note**: To use with a own local server and multiple separated devices, surf to the local ip-adress of th computer with the running server. *Example http://192.168.0.10:3000*
 
 # Online Demo
 You can find a working demo
 [digitalautocue.herokuapp.com](https://digitalautocue.herokuapp.com)
 
-# Know bug
-- Emergency function, won't send to other devices
+# Known bug
+- Emergency function on the Reader side, won't send to other devices
 
 ## Created by
 [quinten.mares.be](http://quinten.mares.be) &copy; 2016 - 2017
