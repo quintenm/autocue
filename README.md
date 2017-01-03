@@ -6,7 +6,7 @@ It has a simple writer and reader side
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.2.4 alpha
+Version 1.2.5 alpha
 
 # Project
 * It's a simple side project, based on a simple idea
@@ -107,6 +107,12 @@ You can find a working demo
 
 # Known bug
 - Emergency function on the Reader side, won't send to other devices
+
+# Online uri
+* [demo heroku.com](http://digitalautocue.herokuapp.com)
+* [github.com](https://github.com/quintenm/digitalautocue)
+* [gitlab.com](https://gitlab.com/quintenm/digitalautocue)
+* [quintenm.github.io](http://quintenm.github.io/2016/12/31/Digital-autocue.html)
 
 ## Created by
 [quinten.mares.be](http://quinten.mares.be) — [heroku Digital Autocue Demo](http://digitalautocue.herokuapp.com) &copy; 2016 - 2017
