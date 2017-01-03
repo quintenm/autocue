@@ -109,4 +109,4 @@ You can find a working demo
 - Emergency function on the Reader side, won't send to other devices
 
 ## Created by
-[quinten.mares.be](http://quinten.mares.be) &copy; 2016 - 2017
+[quinten.mares.be](http://quinten.mares.be) — [heroku Digital Autocue Demo](http://digitalautocue.herokuapp.com) &copy; 2016 - 2017
