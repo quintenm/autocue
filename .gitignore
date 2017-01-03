@@ -98,7 +98,7 @@ tests
 # atom
 .ftpconfig
 
-# node_module
-node_module/*
-node_module
-node_module/
+# node_modules
+node_modules/*
+node_modules
+node_modules/

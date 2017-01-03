@@ -1,44 +1,67 @@
 $(function() {
-  var arrAnimals = ["ant","bird"," cat","chicken","cow","dog","elephant","fish","fox","horse","kangaroo","lion","monkey","penguin","pig","rabbit","sheep","tiger","whale","wolf","zebra"];
-  function token() {
-  	var randAnimal = arrAnimals[Math.floor(Math.random() * arrAnimals.length)].toLowerCase();
-    var number = Math.floor(Math.random() * 1000) + 1;
+  var arrAnimals = ["ant","bird"," cat","chicken","cow","dog","elephant","fish","fox","horse","kangaroo","lion","monkey","penguin","pig","rabbit","sheep","tiger","whale","wolf","zebra"],
+      a,b,
+      readerTimerScroll = true,
+      readerScrollTop = 0,
+      scrollSpeed = 100, //snelheid voor scrollen bij readerStyle-Two
+      readerScrollAutoDown = 0;
 
-  	return randAnimal +""+ number;
+  function token() {
+    if(localStorage.getItem("token170103") != false)
+    {
+      b = localStorage.getItem('token170103');
+      return b;
+    }else{
+  	  var randAnimal = arrAnimals[Math.floor(Math.random() * arrAnimals.length)].toLowerCase();
+      var number = Math.floor(Math.random() * 1000) + 1;
+  	  return randAnimal +""+ number;
+    }
   }
   $('#room').val(token);
-  if(localStorage.getItem("styles") !== null || localStorage.getItem("styles") != null)
+  if(localStorage.getItem("design170103") !== null || localStorage.getItem("design170103") != null)
   {
-    var a = localStorage.getItem('styles');
+    a = localStorage.getItem('design170103');
     $("body").removeAttr('class').addClass(a);
   }
   $("button.sectionNavigation").click(function(e){
     e.preventDefault();
-    var a = $(this).attr('href');
-    if(a == "#readerScreen"|| a == "#writerScreen" || a == "#firstScreen")
+    u = $(this).attr('href');
+    b = $("#room").val();
+    if(u == "#readerScreen"|| u == "#writerScreen" || u == "#firstScreen")
     {
       $("#firstScreen,#readerScreen,#writerScreen").addClass('hidden');
-      $(a).removeClass('hidden');
+      $(u).removeClass('hidden');
     }
-    if(a == "#readerScreen"){
+    if(u == "#readerScreen"){
       $('#varCss').attr('href', 'css/reader.min.css');
-    }else if(a== "#writerScreen"){
+    }else if(u== "#writerScreen"){
       $('#varCss').attr('href', 'css/writer.min.css');
-      $//('#m').focus();
-    }else if(a== "#firstScreen"){
+    }else if(u== "#firstScreen"){
       $('#varCss').attr('href', 'css/main.min.css');
-    }else if(a == "#save"){
-      var a = $("body").attr('class');
-      localStorage.setItem('styles', a);
-    }else if(a == "#reset"){
-      $("body").removeAttr('class').addClass('font-color-primary background-color-primary font-family-secundary');
-    }else if(a == "#alertClose"){
+    }else if(u == "#save"){
+      a = $("body").attr('class');
+      localStorage.setItem('design170103', a);
+      localStorage.setItem('token170103', b);
+    }else if(u == "#reset"){
+      $("body").removeAttr('class').addClass('font-color-primary background-color-primary font-family-secundary readerStyle-One');
+      a = $("body").attr('class');
+      localStorage.setItem('design170103', a);
+      localStorage.setItem('token170103', "");
+    }else if(u == "#alertClose"){
       $(".alert").hide();
-    }else if(a == "#uploadpage"){
+    }else if(u == "#uploadpage"){
       $(".uploadpage").show();
-    }else if(a == "#uploadClose"){
+    }else if(u == "#uploadClose"){
       $(".uploadpage").hide();
-    } else if(a == "#uploadButton"){
+    }else if(u == "#readerScreenInfo"){
+      $(".readerScreenInfo").show();
+    }else if(u == "#readerScreenInfoClose"){
+      $(".readerScreenInfo").hide();
+    }else if(u == "#writerScreenInfo"){
+      $(".writerScreenInfo").show();
+    }else if(u == "#writerScreenInfoClose"){
+      $(".writerScreenInfo").hide();
+    }else if(u == "#uploadButton"){
       if (!window.FileReader) {
           alert('Your browser is not supported')
       }
@@ -55,8 +78,8 @@ $(function() {
           alert('Please upload a file before continuing')
       }
     } else {
-      console.log(a + ": Report to developer");
-      alert(a + ": Report to developer");
+      console.log(u + ": Report to developer");
+      alert(u + ": Report to developer");
     }
   });
   function processFile(e) {
@@ -106,6 +129,10 @@ $(function() {
       $("body[class*='font-family-']").removeClass (function (index, css) {
          return (css.match (/(^|\s)font-family-\S+/g) || []).join(' ');
       });
+    }else if (a.match("^readerStyle-*")) {
+      $("body[class*='readerStyle-']").removeClass (function (index, css) {
+         return (css.match (/(^|\s)readerStyle-\S+/g) || []).join(' ');
+      });
     }
     $('body').addClass(a);
   });
@@ -114,7 +141,20 @@ $(function() {
   });
   var readPosition = 0;
   $(document).keydown(function(e) {
+    //Alert
     if(!$('#readerScreen').hasClass("hidden")){
+      e.preventDefault();
+      switch(e.which) {
+          //alert
+          case 13: // return
+            $('.alert-text').text('There is a problem reported');
+            $('.alert').show();
+          break;
+
+      }
+    }
+    //readerStyle-One
+    if(!$('#readerScreen').hasClass("hidden") && $("body").hasClass("readerStyle-One")){
       e.preventDefault();
       switch(e.which) {
           case 65: // character a
@@ -140,10 +180,54 @@ $(function() {
             $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
           break;
 
-          case 13: // return
-            $('.alert-text').text('There is a problem reported');
-            $('.alert').show();
+          default: return; // exit this handler for other keys
+      }
+    }
+    //readerStyle-Two
+    else if(!$('#readerScreen').hasClass("hidden") && $("body").hasClass("readerStyle-Two")){
+      e.preventDefault();
+      switch(e.which) {
+          //up
+          case 65: // character a
+          case 81: // character q
+          case 70: // character f
+          case 37: // left
+          case 38: // up
+            if(readPosition != "0"){
+              readPosition--;
+            }
+            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
           break;
+          //down
+          case 69: // character e
+          case 68: // character d
+          case 74: // character j
+          case 39: // right
+          case 40: // down
+            if(readPosition != ($(".messagesRead div").length - 1)){
+              readPosition++;
+            }
+            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
+          break;
+
+          case 32: // spacebar
+          readerScrollTop = $(window).scrollTop();
+            if (readerTimerScroll == true){
+              readerTimerScroll = false;
+              readerScrollAutoDown =
+                setInterval(function () {
+                  readerScrollTop += scrollSpeed;
+                  if($(window).scrollTop() + $(window).height() > $(document).height() - 500){
+                    clearInterval(readerScrollAutoDown);
+                    $('.alert-text').text('End of cue');
+                    $('.alert').show();
+                  }
+                  $("body").animate({ scrollTop: readerScrollTop }, 300, 'linear');
+                }, 300);
+            } else if(readerTimerScroll == false){
+              readerTimerScroll = true;
+              clearInterval(readerScrollAutoDown);
+            }
 
           default: return; // exit this handler for other keys
       }
@@ -169,10 +253,6 @@ var socket = io.connect();
       $('.messagesRead').append('<div><p>'+ msg +'</p></div>');
       $('#m').focus();
     });
-
-
-
-
     $('#createRoom').click(function(e){
       e.preventDefault();
 

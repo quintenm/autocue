@@ -2,32 +2,35 @@
 //{
 //  font-family:"Times New Roman","Times", "Serif";
 //}
-div
+#writerScreen
 {
-  display: table;
-  width:100vw;
-  height:25vh;
-p,input:not([type=file])
-{
-  min-width:94vw;
-  min-height:25vh;
-  max-height:100px;
-  margin:0;
-  border:none;
-  padding:1vh 3vw;
-  text-align: center;
-  font-size:2.2rem;
-  outline:none;
-  display: table-cell;
-  vertical-align: middle;
-  transition: background-color .3s ease;
-  &:focus
+  div
   {
-    background-color:rgba(#EFEFEF,.5);
+    display: table;
+    width:100vw;
+    height:25vh;
+  p,input:not([type=file])
+  {
+    min-width:94vw;
+    min-height:25vh;
+    max-height:100px;
+    margin:0;
+    border:none;
+    padding:1vh 3vw;
+    text-align: center;
+    font-size:2rem;
+    outline:none;
+    display: table-cell;
+    vertical-align: middle;
+    transition: background-color .3s ease;
+    &:focus
+    {
+      background-color:rgba(#EFEFEF,.5);
+    }
   }
-}
-input:not([type=file])
-{
-  background-color:rgba(#EFEFEF,.2);
-}
+  input:not([type=file])
+  {
+    background-color:rgba(#EFEFEF,.2);
+  }
+  }
 }

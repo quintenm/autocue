@@ -2,21 +2,53 @@
 //{
 //  font-family:"Times New Roman","Times", "Serif";
 //}
-div
+
+.readerStyle
 {
-  display: table;
-  width:100vw;
-  height:100vh;
-p
-{
-  min-width:94vw;
-  min-height:100vh;
-  margin:0;
-  padding:1vh 3vw;
-  text-align: center;
-  font-size:4.7rem;
-  outline:none;
-  display: table-cell;
-  vertical-align: middle;
-}
+  &-One #readerScreen
+  {
+    div
+    {
+      display: table;
+      width:100vw;
+      height:100vh;
+      p
+      {
+        min-width:94vw;
+        min-height:100vh;
+        margin:0;
+        padding:1vh 3vw;
+        text-align: center;
+        font-size:4.7rem;
+        outline:none;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+  &-Two #readerScreen
+  {
+    div
+    {
+      display: table;
+      width:100vw;
+      height:auto;
+      p
+      {
+        min-width:94vw;
+        min-height:auto;
+        margin:0;
+        padding:5vh 3vw;
+        text-align: center;
+        font-size:4.7rem;
+        outline:none;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      &:nth-last-child(1)
+      {
+        margin-bottom:20vh;
+      }
+    }
+  }
 }

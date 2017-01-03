@@ -1,11 +1,16 @@
 @import "reset";
 @import "theming";
+$smartphone: "(max-width: 767px)";
+
 
 body,html,section
 {
   width:100vw;
   min-height:100vh;
   font-size:2vw;
+  @media #{$smartphone} {
+    font-size:4vw;
+  }
 }
 .hidden
 {
@@ -33,7 +38,7 @@ button
   margin: 4vh 1vw;
   border-width: .2em;
   border-style: solid;
-  font-size:2rem;
+  font-size:5vw;
   font-weight:500;
   cursor:pointer;
   &,
@@ -72,16 +77,24 @@ a
     vertical-align:middle;
   }
 }
-.uploadpage
+.full
 {
 
-  height:100vh;
+  min-height:100vh;
   bottom:0;
+  &:not('.infoScreen') h3
+  {
+    margin-top:25vh;
+  }
+  &.infoScreen h3
+  {
+    margin: 5vh auto;
+  }
   h3
   {
-    font-size:3rem;
-    margin-top:25vh;
+    font-size:2rem;
     font-weight:900;
+
   }
   input
   {
@@ -89,19 +102,88 @@ a
     margin:auto;
     width:100%;
     outline:none;
+    cursor: pointer;
+  }
+}
+.help-list-text
+{
+  margin-top:2vw;
+  & > span
+  {
+    &:not('.fullWidth')
+    {
+      width:50%;
+    }
+    &.fullWidth
+    {
+      width:100%;
+    }
+    @media #{$smartphone}
+    {
+      width:100%;
+      &:nth-of-type(1n+2)
+      {
+        margin-top:2rem;
+      }
+    }
+    display:block;
+    float:left;
+  }
+  p
+  {
+    line-height: 1.4;
+    @media #{$smartphone}
+    {
+      line-height: 1.5;
+      width:100%;
+    }
+    span
+    {
+      font-size: .6rem;
+      border-width: 3px;
+      border-style: solid;
+      padding: 2px 10px;
+      margin:0 5px;
+      border-radius: 5px;
+      @media #{$smartphone}
+      {
+        border-width:1px;
+        padding: 2px 4px;
+        margin:0 2px;
+      }
+    }
+  }
+  h3
+  {
+    font-size:1.5rem;
+    font-weight:700;
+  }
+  h4
+  {
+    font-size: 1.2rem;
+    &:nth-of-type(1n+2)
+    {
+      margin-top:1rem;
+    }
+    span
+    {
+      font-size: .6rem;
+      font-weight:100;
+    }
   }
 }
 input[type=file] {
     margin: 0 auto;
     padding-top:2rem;
-    font-size:2rem;
+    font-size:1.5rem;
     &::-webkit-file-upload-button {
       visibility: hidden;
     }
     &::before {
       content: 'Upload txt file';
+
       display: inline-block;
-      font-size:2rem;
+      font-size:1.5rem;
       outline:none;
       border-radius:5px;
       padding: 2vh 10vw;

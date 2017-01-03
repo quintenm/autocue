@@ -9,8 +9,6 @@ div:not(.dropdown,.alert,.dropdown *, .part)
   width:100vw;
   min-height:100vh;
 }
-
-
 #firstScreen
 {
   //overflow-x:hidden;
@@ -22,13 +20,11 @@ div:not(.dropdown,.alert,.dropdown *, .part)
       display:table;
       width:100vw;
       min-height:100vh;
-
       position: fixed;
       top: 0;
       .title
       {
         vertical-align: middle;
-
         display:table-cell;
         h1
         {
@@ -67,14 +63,14 @@ div:not(.dropdown,.alert,.dropdown *, .part)
       {
         width:20vw;
         margin:auto;
-        padding: 20px;
+        padding: 10px;
         cursor:pointer;
       }
       input
       {
         &.input
         {
-          font-size:2rem;
+          font-size:5vw;
           outline:none;
           border-radius:5px;
           padding: 2vh 2vw;
@@ -109,11 +105,16 @@ div:not(.dropdown,.alert,.dropdown *, .part)
           color:white;
         }
       }
-
+      :not('.help-list-text')
+      {
+        p
+        {
+          width: 50vw;
+        }
+      }
       p
       {
-        font-size:2vw;
-        width: 50vw;
+        font-size:1rem;
         margin:auto;
         text-align:center;
       }
@@ -192,24 +193,6 @@ div:not(.dropdown,.alert,.dropdown *, .part)
         &:hover .dropdown-content
         {
           display: block;
-        }
-      }
-      #help-list
-      {
-        margin-top:2vw;
-        p
-        {
-          line-height: 1.2;
-        }
-        span
-        {
-          font-size: .6rem;
-          border-width: 3px;
-          border-style: solid;
-
-          padding: 2px 10px;
-          margin:0 5px;
-          border-radius: 5px;
         }
       }
     }
