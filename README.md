@@ -6,7 +6,7 @@ It has a simple writer and reader side
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.2.3 alpha
+Version 1.2.4 alpha
 
 # Project
 * It's a simple side project, based on a simple idea

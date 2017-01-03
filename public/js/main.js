@@ -7,7 +7,7 @@ $(function() {
       readerScrollAutoDown = 0;
 
   function token() {
-    if(localStorage.getItem("token170103") != false)
+    if(localStorage.getItem("token170103") != false && localStorage.getItem("token170103") === undefined)
     {
       b = localStorage.getItem('token170103');
       return b;
