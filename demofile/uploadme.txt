@@ -1,5 +1,0 @@
-Upload this file.
-You can upload this file in the Writer section, choose the Upload autocue button.
-It accept only txt files.
-After the file was uploaded, every line will be an separated section.
-In the future, there will be a download option.
