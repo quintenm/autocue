@@ -27,6 +27,15 @@ Version 1.2.5 alpha
 # What it will do in future
 * Auto insert comments from social media (It would be cool)
 
+# **Hey, for what reason will I use this awesome Autocue**
+* As a presenter of your show you need a good overview of the last minute created questions.
+* As director you need to have a overview with the text and a way to edit those lines while the show is recording.
+* Autocue software is to expensive.
+* Online tool is awesome
+* You can contribute with multiple people
+* a Really fast setup.
+* You're dreaming of a way to link your  Facebook live or YouTube live chat with your autocue. This is a feature that will active in the future.
+
 # Somme side notes
 * With every page refresh all the input is lost
 
