@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 </head>
 
-<body class="font-color-primary background-color-primary font-family-secundary readerStyle-One">
+<body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
   <div class="overlay alert" style="display: none;">
     <p><span class="alert-text"></span>
       <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -24,34 +24,42 @@
     <button href="#uploadClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
   <div class="overlay full infoScreen writerScreenInfo" style="display: none;">
-    <h3>How to ...</h3>
-    <span class="help-list-text">
-      <span class="fullWidth">
-        <h3>Writer</h3>
-        <p>1. Click on the text input field</p>
-        <p>2. Type your text</p>
-        <p>3. Hit <span>Return</span> to submit</p>
-        <p>4. Type your next sentence</p>
+    <span class="partInformation">
+      <h3>How to ...</h3>
+      <span class="help-list-text">
+        <span class="fullWidth">
+          <h3>Writer</h3>
+          <p>1. Click on the text input field</p>
+          <p>2. Type your text</p>
+          <p>3. Hit <span>Return</span> to submit</p>
+          <p>4. Type your next sentence</p>
+        </span>
       </span>
     </span>
-    <button href="#writerScreenInfoClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+    <span class="partButton">
+      <button href="#writerScreenInfoClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </span>
   </div>
   <div class="overlay full infoScreen readerScreenInfo" style="display: none;">
-    <h3>How to ...</h3>
-    <span class="help-list-text">
-      <span class="fullWidth">
-        <h3>Reader</h3>
-        <h4>Stick Scroll <span>(default)</span></h4>
-        <p>Keypress Previous <span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
-        <p>Keypress Next <span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
-        <p>Keypress Emergency <span>Return</span></p>
-        <h4>Just Scroll <span>(classic)</span></h4>
-        <p>Start and Stop scrolling <span>Spacebar</span></p>
-        <p>Normal Navigation</p>
-        <p>Keypress Emergency <span>Return</span></p>
+    <span class="partInformation">
+      <h3>How to ...</h3>
+      <span class="help-list-text">
+        <span class="fullWidth">
+          <h3>Reader</h3>
+          <h4>Stick Scroll <span>(default)</span></h4>
+          <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
+          <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
+          <p>Keypress Emergency <br><span>Return</span></p>
+          <h4>Just Scroll <span>(classic)</span></h4>
+          <p>Start and Stop scrolling <br><span>Spacebar</span></p>
+          <p>Normal Navigation</p>
+          <p>Keypress Emergency <br><span>Return</span></p>
+        </span>
       </span>
     </span>
-    <button href="#readerScreenInfoClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+    <span class="partButton">
+      <button href="#readerScreenInfoClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </span>
   </div>
   <section id="firstScreen">
     <div class="backgroundImage">
@@ -89,77 +97,115 @@
       </div>
       <hr>
       <p>
-        <span class="navigation" id="options-button" title="Set some options">Options <i class="fa fa-angle-down" aria-hidden="true"></i></span>&nbsp;&nbsp;
-        <span class="navigation" id="help-button" title="how to navigate in reader">Help <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+        <button href="#mainScreenOptions" class="sectionNavigation" title="Set some options">Options <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+        <button href="#mainScreenHelp" class="sectionNavigation" title="how to navigate in reader and writer">Help <i class="fa fa-angle-right" aria-hidden="true"></i></button>
       </p>
-      <span id="options-list" style="display: none;">
-        <div class="dropdown">
-          <button class="dropbtn">Font Color</button>
-          <div class="dropdown-content">
-            <a href="#" data-href="font-color-primary" class="active" style="color:black;">Black <span>(default)</span></a>
-            <a href="#" data-href="font-color-secundary" style="color:white;">White</a>
-            <a href="#" data-href="font-color-tertiary" style="color:red;">Red</a>
-            <a href="#" data-href="font-color-quaternary" style="color:green;">Green</a>
-            <a href="#" data-href="font-color-quinary" style="color:blue;">Blue</a>
-            <a href="#" data-href="font-color-senary" style="color:blue;">Yellow</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Background Color</button>
-          <div class="dropdown-content">
-            <a href="#" data-href="background-color-primary" class="active" style="background-color:white;">White <span>(default)</span></a>
-            <a href="#" data-href="background-color-secundary" style="background-color:black;">Black</a>
-            <a href="#" data-href="background-color-tertiary" style="background-color:red;">Red</a>
-            <a href="#" data-href="background-color-quaternary" style="background-color:green;">Green</a>
-            <a href="#" data-href="background-color-quinary" style="background-color:blue;">Blue</a>
-            <a href="#" data-href="background-color-senary" style="background-color:yellow;">Yellow</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">font-family</button>
-          <div class="dropdown-content">
-          <a href="#" data-href="font-family-primary" class="active" style="font-family:serif">Serif <span>(default)</span></a>
-          <a href="#" data-href="font-family-secundary" style="font-family:sans-serif">Sans-serif</a>
-        </div>
-      </div>
-    <div class="dropdown">
-      <button class="dropbtn">Reading style</button>
-      <div class="dropdown-content">
-        <a href="#" data-href="readerStyle-One"class="active">Stick scroll <span>(default)</span></a>
-        <a href="#" data-href="readerStyle-Two">Just scroll <span>(classic)</span></a>
-      </div>
-    </div>
-    <button href="#save" class="sectionNavigation" title="save settings and room"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
-    <button href="#reset" class="sectionNavigation buttonExeption" title="restore settings to default"><i class="fa fa-history" aria-hidden="true"></i></button>
-    </span>
-    <span id="help-list" class="help-list-text" style="display: none;">
-      <span>
-        <h3>Writer</h3>
-        <p>1. Click on the text input field</p>
-        <p>2. Type your text</p>
-        <p>3. Hit <span>Return</span> to submit</p>
-        <p>4. Type your next sentence</p>
+      <span class="mainScreenOptions overlay full" style="display:none;">
+        <span class="partInformation">
+          <h3>Set to ...</h3>
+          <span class="help-list-text">
+            <span class="fullWidth">
+              <div class="dropdown">
+                <h3 class="dropbtn">Font Color</h3>
+                <div class="dropdown-content">
+                  <a href="#" data-href="font-color-primary" class="active" style="color:black;">Black <span>(default)</span></a>
+                  <a href="#" data-href="font-color-secundary" style="color:white;">White</a>
+                  <a href="#" data-href="font-color-tertiary" style="color:red;">Red</a>
+                  <a href="#" data-href="font-color-quaternary" style="color:green;">Green</a>
+                  <a href="#" data-href="font-color-quinary" style="color:blue;">Blue</a>
+                  <a href="#" data-href="font-color-senary" style="color:yellow;">Yellow</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <h3 class="dropbtn">Background Color</h3>
+                <div class="dropdown-content">
+                  <a href="#" data-href="background-color-primary" class="active" style="background-color:white;">White <span>(default)</span></a>
+                  <a href="#" data-href="background-color-secundary" style="background-color:black;">Black</a>
+                  <a href="#" data-href="background-color-tertiary" style="background-color:red;">Red</a>
+                  <a href="#" data-href="background-color-quaternary" style="background-color:green;">Green</a>
+                  <a href="#" data-href="background-color-quinary" style="background-color:blue;">Blue</a>
+                  <a href="#" data-href="background-color-senary" style="background-color:yellow;">Yellow</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <h3 class="dropbtn">Font family</h3>
+                <div class="dropdown-content">
+                  <a href="#" data-href="font-family-primary" class="active" style="font-family:serif">Serif <span>(default)</span></a>
+                  <a href="#" data-href="font-family-secundary" style="font-family:sans-serif">Sans-serif</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <h3 class="dropbtn">Text weight</h3>
+                <div class="dropdown-content">
+                  <a href="#" data-href="text-weight-light" style="font-weight:100">Light</a>
+                  <a href="#" data-href="text-weight-normal" class="active" style="font-weight:500">Normal <span>(default)</span></a>
+                  <a href="#" data-href="text-weight-bold" style="font-weight:900">Bold</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <h3 class="dropbtn">Text transform</h3>
+                <div class="dropdown-content">
+                  <a href="#" data-href="text-transform-normal" class="active" style="text-transform:normal">normal <span>(default)</span></a>
+                  <a href="#" data-href="text-transform-capitalize" style="text-transform:capitalize">capitalize</a>
+                  <a href="#" data-href="text-transform-lowercase" style="text-transform:lowercase">lowercase</a>
+                  <a href="#" data-href="text-transform-uppercase" style="text-transform:uppercase">uppercase</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <h3 class="dropbtn">Reading style</h3>
+                <div class="dropdown-content">
+                  <a href="#" data-href="readerStyle-One" class="active">Stick scroll <span>(default)</span></a>
+                  <a href="#" data-href="readerStyle-Two">Just scroll <span>(classic)</span></a>
+                </div>
+              </div>
+            </span>
+          </span>
+        </span>
+        <span class="partButton">
+          <button href="#save" class="sectionNavigation" title="save settings and room"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+          <button href="#reset" class="sectionNavigation buttonExeption" title="restore settings to default"><i class="fa fa-history" aria-hidden="true"></i></button>
+          <button href="#mainScreenOptionsClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </span>
       </span>
-      <span>
-        <h3>Reader</h3>
-        <h4>Stick Scroll <span>(default)</span></h4>
-        <p>Keypress Previous <span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
-        <p>Keypress Next <span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
-        <p>Keypress Emergency <span>Return</span></p>
-        <h4>Just Scroll <span>(classic)</span></h4>
-        <p>Start and Stop scrolling <span>Spacebar</span></p>
-        <p>Normal Navigation</p>
-        <p>Keypress Emergency <span>Return</span></p>
+      <span class="overlay full infoScreen mainScreenHelp" style="display:none;">
+        <span class="partInformation">
+          <h3>How to ...</h3>
+          <span class="help-list-text">
+            <span class="fullWidth">
+              <h3>Writer</h3>
+              <p>1. Click on the text input field</p>
+              <p>2. Type your text</p>
+              <p>3. Hit <span>Return</span> to submit</p>
+              <p>4. Type your next sentence</p>
+            </span>
+          </span>
+          <span class="help-list-text">
+            <span class="fullWidth">
+              <h3>Reader</h3>
+              <h4>Stick Scroll<span>(default)</span></h4>
+              <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
+              <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
+              <p>Keypress Emergency <br><span>Return</span></p>
+              <h4>Just Scroll <span>(classic)</span></h4>
+              <p>Start and Stop scrolling <br><span>Spacebar</span></p>
+              <p>Normal Navigation</p>
+              <p>Keypress Emergency <br><span>Return</span></p>
+            </span>
+          </span>
+        </span>
+        <span class="partButton">
+          <button href="#mainScreenHelpClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </span>
       </span>
-    </span>
-    <footer><a href="http://quinten.mares.be" target="_blank">quinten.mares.be</a> — <a href="https://github.com/quintenm/digitalautocue" target="_blank">Github.com Digital Autocue</a> &copy; 2017</footer>
+      <footer><a href="http://quinten.mares.be" target="_blank">quinten.mares.be</a> — <a href="https://github.com/quintenm/digitalautocue" target="_blank">Github.com Digital Autocue</a> &copy; 2017</footer>
     </div>
   </section>
   <section id="writerScreen" class="hidden">
     <div class="messagesWrite">
       <div>
         <p>
-          <button href="#firstScreen" class="sectionNavigation">Go back</button><button href="#writerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button>
+          <button href="#firstScreen" class="sectionNavigation">Go back</button>
+          <button href="#writerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button>
           <button href="#uploadpage" class="sectionNavigation">Upload autocue&nbsp;&nbsp;<i class="fa fa-upload" aria-hidden="true"></i></button>
         </p>
       </div>
@@ -179,14 +225,15 @@
     <div class="messagesRead">
       <div>
         <p>
-          <button href="#firstScreen" class="sectionNavigation">Go back</button><button href="#readerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button>
+          <button href="#firstScreen" class="sectionNavigation">Go back</button>
+          <button href="#readerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button>
           <br>
           <span style="font-size: .5em;">Scroll down <i class="fa fa-angle-down" aria-hidden="true"></i></span>
         </p>
       </div>
       <div>
-        <p>Add in Writer your text.
-          <br> It wil be displayed here.</p>
+        <p>Add add your text in the Writer-section.
+          <br>It wil be displayed here.</p>
       </div>
     </div>
   </section>
@@ -194,7 +241,20 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://use.fontawesome.com/6517cff0d0.js"></script>
   <script src="js/main.min.js" charset="utf-8"></script>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-50364010-9', 'auto');ga('send', 'pageview');</script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-50364010-9', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 
 </html>

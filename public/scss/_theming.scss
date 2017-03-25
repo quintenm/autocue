@@ -19,6 +19,17 @@
     'primary': ("Times New Roman","Times", "Serif"),
     'secundary': ("Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif")
   ) !default;
+  $text-weight: (
+    'regular': 500,
+    'bold': 900,
+    'light': 100
+  ) !default;
+  $text-transform: (
+    'normal': none,
+    'capitalize': capitalize,
+    'uppercase': uppercase,
+    'lowercase': lowercase,
+  ) !default;
 
 @each $type, $color in $font-color
 {
@@ -126,6 +137,26 @@
     {
       font-family: $font;
 
+    }
+  }
+}
+@each $text, $weight in $text-weight
+{
+  body,html
+  {
+    &.text-weight-#{$text}
+    {
+      font-weight: $weight;
+    }
+  }
+}
+@each $text, $transform in $text-transform
+{
+  body,html
+  {
+    &.text-transform-#{$text}
+    {
+      text-transform: $transform;
     }
   }
 }

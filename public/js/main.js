@@ -43,7 +43,7 @@ $(function() {
       localStorage.setItem('design170103', a);
       localStorage.setItem('token170103', b);
     }else if(u == "#reset"){
-      $("body").removeAttr('class').addClass('font-color-primary background-color-primary font-family-secundary readerStyle-One');
+      $("body").removeAttr('class').addClass('font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal');
       a = $("body").attr('class');
       localStorage.setItem('design170103', a);
       localStorage.setItem('token170103', "");
@@ -53,6 +53,14 @@ $(function() {
       $(".uploadpage").show();
     }else if(u == "#uploadClose"){
       $(".uploadpage").hide();
+    }else if(u == "#mainScreenOptions"){
+      $(".mainScreenOptions").show();
+    }else if(u == "#mainScreenOptionsClose"){
+      $(".mainScreenOptions").hide();
+    }else if(u == "#mainScreenHelp"){
+      $(".mainScreenHelp").show();
+    }else if(u == "#mainScreenHelpClose"){
+      $(".mainScreenHelp").hide();
     }else if(u == "#readerScreenInfo"){
       $(".readerScreenInfo").show();
     }else if(u == "#readerScreenInfoClose"){
@@ -104,16 +112,7 @@ $(function() {
       $('.part2,.navigation.previous').removeClass('hidden');
     }
   });
-  $("#options-button").click(function(e){
-    e.preventDefault();
-    $('#help-list').hide();
-    $('#options-list').slideToggle();
-  });
-  $("#help-button").click(function(e){
-    e.preventDefault();
-    $('#options-list').hide();
-    $('#help-list').slideToggle();
-  });
+
   $(".dropdown-content a").click(function(e){
     e.preventDefault();
     var a = $(this).data('href');
@@ -133,7 +132,16 @@ $(function() {
       $("body[class*='readerStyle-']").removeClass (function (index, css) {
          return (css.match (/(^|\s)readerStyle-\S+/g) || []).join(' ');
       });
+    }else if (a.match("^text-weight-*")) {
+      $("body[class*='text-weight-']").removeClass (function (index, css) {
+         return (css.match (/(^|\s)text-weight-\S+/g) || []).join(' ');
+      });
+    }else if (a.match("^text-transform-*")) {
+      $("body[class*='text-transform-']").removeClass (function (index, css) {
+         return (css.match (/(^|\s)text-transform-\S+/g) || []).join(' ');
+      });
     }
+
     $('body').addClass(a);
   });
   $('#createRoom').click(function(){

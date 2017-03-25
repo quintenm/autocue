@@ -1,13 +1,15 @@
 @import "reset";
 @import "theming";
 $smartphone: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1024px)";
+$desktop: "(min-width: 1025px)";
 
 
 body,html,section
 {
   width:100vw;
   min-height:100vh;
-  font-size:2vw;
+  font-size:1.8vw;
   @media #{$smartphone} {
     font-size:4vw;
   }
@@ -33,14 +35,14 @@ hr
 }
 button
 {
-  border-radius:5px;
   padding:2vh 10vw;
-  margin: 4vh 1vw;
-  border-width: .2em;
-  border-style: solid;
   font-size:5vw;
   font-weight:500;
   cursor:pointer;
+  border-radius:5px;
+  margin: 4vh 1vw;
+  border-width: .2em;
+  border-style: solid;
   &,
   &:link,
   &:hover,
@@ -61,8 +63,23 @@ a
   top:0;
   left:0;
   right:0;
-  width:100vw;
-  text-align:center;
+  @media #{$smartphone}
+  {
+    width:96vw;
+    padding:0 2vw;
+  }
+  @media #{$tablet}
+  {
+    width:80vw;
+    padding:0 10vw;
+  }
+  @media #{$desktop}
+  {
+    width:70vw;
+    padding:0 15vw;
+  }
+
+  text-align:left;
 }
 .alert
 {
@@ -88,13 +105,17 @@ a
   }
   &.infoScreen h3
   {
-    margin: 5vh auto;
+    margin: 5vh auto 1vh auto;
   }
   h3
   {
     font-size:2rem;
     font-weight:900;
 
+  }
+  p
+  {
+    text-align:left!important;
   }
   input
   {
@@ -105,12 +126,54 @@ a
     cursor: pointer;
   }
 }
+.part
+{
+  &Information
+  {
+    display: block;
+    float: left;
+    height:100vh;
+    overflow:auto;
+    @media #{$smartphone}
+    {
+      width:100%;
+    }
+    @media #{$tablet}
+    {
+      width:70%;
+    }
+    @media #{$desktop}
+    {
+      width:70%;
+    }
+  }
+  &Button
+  {
+    width:30%;
+    display: block;
+    float: left;
+    @media #{$smartphone}
+    {
+      width:100%;
+    }
+    @media #{$tablet}
+    {
+      width:30%;
+    }
+    @media #{$desktop}
+    {
+      width:30%;
+    }
+  }
+}
 .help-list-text
 {
   margin-top:2vw;
+  display: block;
+  font-size:.8rem!important;
   & > span
   {
-    &:not('.fullWidth')
+    &.halfWidth
     {
       width:50%;
     }
@@ -132,22 +195,36 @@ a
   p
   {
     line-height: 1.4;
+    font-size:1em;
+    font-weight:500;
+    br
+    {
+      display: none;
+    }
     @media #{$smartphone}
     {
       line-height: 1.5;
       width:100%;
+      br
+      {
+        display: block;
+      }
+    }
+    &:nth-last-child(1)
+    {
+      margin-bottom:20px!important;
     }
     span
     {
-      font-size: .6rem;
-      border-width: 3px;
+      font-size: .8em;
+      border-width: 2px;
       border-style: solid;
-      padding: 2px 10px;
-      margin:0 5px;
+      padding: 1px 5px;
+      margin: 0px 5px;
       border-radius: 5px;
       @media #{$smartphone}
       {
-        border-width:1px;
+        border-width:.5px;
         padding: 2px 4px;
         margin:0 2px;
       }
@@ -155,19 +232,19 @@ a
   }
   h3
   {
-    font-size:1.5rem;
+    font-size:1.5em;
     font-weight:700;
   }
   h4
   {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     &:nth-of-type(1n+2)
     {
       margin-top:1rem;
     }
     span
     {
-      font-size: .6rem;
+      font-size: .6em;
       font-weight:100;
     }
   }
@@ -175,12 +252,12 @@ a
 input[type=file] {
     margin: 0 auto;
     padding-top:2rem;
-    font-size:1.5rem;
+    font-size:1.5em;
     &::-webkit-file-upload-button {
       visibility: hidden;
     }
     &::before {
-      content: 'Upload txt file';
+      content: 'Upload .txt file';
 
       display: inline-block;
       font-size:1.5rem;

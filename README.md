@@ -6,7 +6,7 @@ It has a simple writer and reader side
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.2.5 alpha
+Version 1.3 alpha
 
 # Project
 * It's a simple side project, based on a simple idea
@@ -18,7 +18,7 @@ Version 1.2.5 alpha
 * Display live the entered text in Writer (Reader)
 * Work in rooms
 * Switch fast between Writer and Reader
-* Set somme customisation, such as Font-family, hightlighted color, background-color and reading style
+* Set somme customisation, such as Font-family, text-transform, text-weight, hightlighted color, background-color and reading style
 * Font scales with browser width
 * Save customisation or roomname and reset it, localStorage based
 * Keyboard trigger for scrolling or emergency call to writer
