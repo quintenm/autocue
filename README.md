@@ -67,14 +67,14 @@ OR
 
 # Extra
 ### Style
-* Change default background color;
+* Change default font color
   * white
   * black
   * red
   * green
   * blue
   * yellow
-* Change default font color
+* Change default background color;
   * white
   * black
   * red
@@ -84,6 +84,15 @@ OR
 * Change default font family
   * serif
   * sans-serif
+* Change default text weight
+  * light
+  * normal
+  * bold
+* Change default text transform
+  * none
+  * capitalize
+  * lowercase
+  * uppercase
 * Change default display style in Reader
   * Stick scroll (default)
   * Just scroll (classic)
