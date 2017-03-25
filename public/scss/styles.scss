@@ -59,7 +59,7 @@ a
 .overlay
 {
   position:fixed;
-  z-index:10;
+  z-index:2;
   top:0;
   left:0;
   right:0;
@@ -278,4 +278,60 @@ input[type=file] {
       right: 0;
       top: 7vh;
     }
+}
+:-webkit-full-screen {
+  /* properties */
+}
+
+:-moz-full-screen {
+  /* properties */
+}
+
+:-ms-fullscreen {
+  /* properties */
+}
+
+:full-screen { /*pre-spec */
+  /* properties */
+}
+
+:fullscreen { /* spec */
+  /* properties */
+}
+
+/* deeper elements */
+:-webkit-full-screen video {
+  width: 100%;
+  height: 100%;
+}
+
+/* styling the backdrop*/
+::backdrop {
+  /* properties */
+}
+::-ms-backdrop {
+  /* properties */
+}
+a.fullscreen
+{
+  &:before
+  {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+  }
+  &.compress:before
+  {
+    content: "\f066";
+  }
+  &.expand:before
+  {
+    content:"\f065";
+  }
+  position:fixed;
+
+  top:10px;
+  right:10px;
+  z-index:3;
 }

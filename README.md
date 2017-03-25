@@ -23,6 +23,7 @@ Version 1.3 alpha
 * Save customisation or roomname and reset it, localStorage based
 * Keyboard trigger for scrolling or emergency call to writer
 * Upload txt-file with autocue text for a fast input.
+* View all in Fullscreen mode
 
 # What it will do in future
 * Auto insert comments from social media (It would be cool)

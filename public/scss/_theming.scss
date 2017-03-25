@@ -96,6 +96,10 @@
     #help-list p span{
      border-color: $color;
    }
+   a.fullscreen:before
+   {
+     text-shadow:0 0 10px $color;
+   }
   }
 }
 @each $type, $color in $background-color
@@ -126,6 +130,10 @@
       //color: $color;
       border-color:darken($color,5%);
       background-color:darken($color,5%);
+    }
+    a.fullscreen:before
+    {
+      color:$color;
     }
   }
 }

@@ -271,4 +271,38 @@ var socket = io.connect();
 
     });
 
+
+
+
+
+
+
 });
+
+// Find the right method, call on correct element
+function launchFullscreen(element) {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+  (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    $('.fullscreen').addClass('compress').removeClass('expand');
+    if(element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if(element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if(element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    } else if(element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    }
+  }else{
+    $('.fullscreen').addClass('expand').removeClass('compress');
+    if (document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    } else if(element.msCancelFullscreen) {
+      element.msCancelFullscreen();
+    }
+  }
+}

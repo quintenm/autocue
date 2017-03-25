@@ -10,6 +10,7 @@
 </head>
 
 <body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
+  <a onclick="launchFullscreen(document.documentElement);" class="fullscreen expand"></a>
   <div class="overlay alert" style="display: none;">
     <p><span class="alert-text"></span>
       <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -77,7 +78,7 @@
     <div id="settingsarea" class="content">
       <hr>
       <div class="part part1">
-        <p>Choose your own secret room name</p>
+        <p>Choose your own secret roomname</p>
         <br>
         <input type="text" class="input room" name="firstname" id="room" value="">
         <button type="button" class="input submit" value="join" id="createRoom">join</button>
