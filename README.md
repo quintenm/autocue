@@ -6,39 +6,42 @@ It has a simple writer and reader side
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.3 alpha
+Version 1.35 alpha
 
 # Project
-* It's a simple side project, based on a simple idea
+* It's a simple side project, based on a simple idea.
 * This project is an alpha, there can be still bugs, bug-reporting will be appreciated.
-* You can download it, it's free, but please leave somme suggestions for future upgrades
+* You can download it, it's free, but please leave somme suggestions for future upgrades.
 
 # What it can do
-* Insert text in the highlighted section (Writer)
-* Display live the entered text in Writer (Reader)
-* Work in rooms
-* Switch fast between Writer and Reader
-* Set somme customisation, such as Font-family, text-transform, text-weight, hightlighted color, background-color and reading style
-* Font scales with browser width
-* Save customisation or roomname and reset it, localStorage based
-* Keyboard trigger for scrolling or emergency call to writer
+* Insert text in the highlighted section (Writer).
+* Display live the entered text in Writer (Reader).
+* Work in rooms.
+* Switch fast between Writer and Reader.
+* Set somme customisation, such as Font-family, text-transform, text-weight, hightlighted color, background-color and reading style.
+* Font scales with browser width.
+* Save customisation or roomname and reset it, localStorage based.
+* Keyboard trigger for scrolling or emergency call to writer.
 * Upload txt-file with autocue text for a fast input.
-* View all in Fullscreen mode
+* View all in Fullscreen mode.
+* Supports html and css input.
+* Emergency button to alert everyone with visual text.
+* Control de scrollposition via other devices.
 
 # What it will do in future
-* Auto insert comments from social media (It would be cool)
+* Auto insert comments from social media (It would be cool).
 
 # **Hey, for what reason will I use this awesome Autocue**
 * As a presenter of your show you need a good overview of the last minute created questions.
 * As director you need to have a overview with the text and a way to edit those lines while the show is recording.
 * Autocue software is to expensive.
-* Online tool is awesome
-* You can contribute with multiple people
+* Online tool is awesome.
+* You can contribute with multiple people.
 * a Really fast setup.
 * You're dreaming of a way to link your  Facebook live or YouTube live chat with your autocue. This is a feature that will active in the future.
 
-# Somme side notes
-* With every page refresh all the input is lost
+# A side note
+* With every page refresh all the input is lost.
 
 # Used libraries
 * jQuery v1.12.4
@@ -123,9 +126,6 @@ OR
 # Online Demo
 You can find a working demo
 [digitalautocue.herokuapp.com](https://digitalautocue.herokuapp.com)
-
-# Known bug
-- Emergency function on the Reader side, won't send to other devices
 
 # Online uri
 * [demo heroku.com](http://digitalautocue.herokuapp.com)

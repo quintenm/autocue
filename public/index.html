@@ -16,25 +16,30 @@
       <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
     </p>
   </div>
-  <div class="overlay full uploadpage" style="display: none;">
-    <h3>Upload your own text</h3>
-    <div style="position:relative;display:block;height:33vh;">
-      <input type="file" class="file-input" id="file" accept='.txt'>
-    </div>
-    <button href="#uploadButton" class="sectionNavigation" id="upload">Upload&nbsp;&nbsp;<i class="fa fa-upload" aria-hidden="true"></i></button>
-    <button href="#uploadClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+  <div class="overlay full infoScreen uploadpage" style="display: none;">
+    <span class="partInformation">
+      <span>
+        <h3>Upload your text</h3>
+        <input type="file" class="file-input" id="file" accept='.txt'>
+      </span>
+    </span>
+    <span class="partButton">
+      <button href="#uploadButton" class="sectionNavigation" id="upload"><i class="fa fa-upload" aria-hidden="true"></i></button>
+      <button href="#uploadClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </span>
   </div>
   <div class="overlay full infoScreen writerScreenInfo" style="display: none;">
     <span class="partInformation">
       <h3>How to ...</h3>
-      <span class="help-list-text">
-        <span class="fullWidth">
-          <h3>Writer</h3>
-          <p>1. Click on the text input field</p>
-          <p>2. Type your text</p>
-          <p>3. Hit <span>Return</span> to submit</p>
-          <p>4. Type your next sentence</p>
-        </span>
+      <span>
+        <h3>Writer</h3>
+        <p>1. Click on the text input field</p>
+        <p>2. Type your text</p>
+        <p>3. Hit <span>Return</span> to submit</p>
+        <p>4. Type your next sentence</p>
+        <h3>Navigation</h3>
+        <p>Click on <i class="fa fa-upload" aria-hidden="true"></i> to upload your own Autocue text</p>
+        <p>Click on <i class="fa fa-gamepad" aria-hidden="true"></i> to navigate on Reader.</p>
       </span>
     </span>
     <span class="partButton">
@@ -44,18 +49,16 @@
   <div class="overlay full infoScreen readerScreenInfo" style="display: none;">
     <span class="partInformation">
       <h3>How to ...</h3>
-      <span class="help-list-text">
-        <span class="fullWidth">
-          <h3>Reader</h3>
-          <h4>Stick Scroll <span>(default)</span></h4>
-          <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
-          <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
-          <p>Keypress Emergency <br><span>Return</span></p>
-          <h4>Just Scroll <span>(classic)</span></h4>
-          <p>Start and Stop scrolling <br><span>Spacebar</span></p>
-          <p>Normal Navigation</p>
-          <p>Keypress Emergency <br><span>Return</span></p>
-        </span>
+      <span>
+        <h3>Reader</h3>
+        <h4>Stick Scroll <span>(default)</span></h4>
+        <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
+        <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
+        <p>Keypress Emergency <br><span>Return</span></p>
+        <h4>Just Scroll <span>(classic)</span></h4>
+        <p>Start and Stop scrolling <br><span>Spacebar</span></p>
+        <p>Normal Navigation</p>
+        <p>Keypress Emergency <br><span>Return</span></p>
       </span>
     </span>
     <span class="partButton">
@@ -104,62 +107,60 @@
       <span class="mainScreenOptions overlay full" style="display:none;">
         <span class="partInformation">
           <h3>Set to ...</h3>
-          <span class="help-list-text">
-            <span class="fullWidth">
-              <div class="dropdown">
-                <h3 class="dropbtn">Font Color</h3>
-                <div class="dropdown-content">
-                  <a href="#" data-href="font-color-primary" class="active" style="color:black;">Black <span>(default)</span></a>
-                  <a href="#" data-href="font-color-secundary" style="color:white;">White</a>
-                  <a href="#" data-href="font-color-tertiary" style="color:red;">Red</a>
-                  <a href="#" data-href="font-color-quaternary" style="color:green;">Green</a>
-                  <a href="#" data-href="font-color-quinary" style="color:blue;">Blue</a>
-                  <a href="#" data-href="font-color-senary" style="color:yellow;">Yellow</a>
-                </div>
+          <span>
+            <div class="dropdown">
+              <h3 class="dropbtn">Font Color</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="font-color-primary" class="active" style="color:black;">Black <span>(default)</span></a>
+                <a href="#" data-href="font-color-secundary" style="color:white;">White</a>
+                <a href="#" data-href="font-color-tertiary" style="color:red;">Red</a>
+                <a href="#" data-href="font-color-quaternary" style="color:green;">Green</a>
+                <a href="#" data-href="font-color-quinary" style="color:blue;">Blue</a>
+                <a href="#" data-href="font-color-senary" style="color:yellow;">Yellow</a>
               </div>
-              <div class="dropdown">
-                <h3 class="dropbtn">Background Color</h3>
-                <div class="dropdown-content">
-                  <a href="#" data-href="background-color-primary" class="active" style="background-color:white;">White <span>(default)</span></a>
-                  <a href="#" data-href="background-color-secundary" style="background-color:black;">Black</a>
-                  <a href="#" data-href="background-color-tertiary" style="background-color:red;">Red</a>
-                  <a href="#" data-href="background-color-quaternary" style="background-color:green;">Green</a>
-                  <a href="#" data-href="background-color-quinary" style="background-color:blue;">Blue</a>
-                  <a href="#" data-href="background-color-senary" style="background-color:yellow;">Yellow</a>
-                </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Background Color</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="background-color-primary" class="active" style="background-color:white;">White <span>(default)</span></a>
+                <a href="#" data-href="background-color-secundary" style="background-color:black;">Black</a>
+                <a href="#" data-href="background-color-tertiary" style="background-color:red;">Red</a>
+                <a href="#" data-href="background-color-quaternary" style="background-color:green;">Green</a>
+                <a href="#" data-href="background-color-quinary" style="background-color:blue;">Blue</a>
+                <a href="#" data-href="background-color-senary" style="background-color:yellow;">Yellow</a>
               </div>
-              <div class="dropdown">
-                <h3 class="dropbtn">Font family</h3>
-                <div class="dropdown-content">
-                  <a href="#" data-href="font-family-primary" class="active" style="font-family:serif">Serif <span>(default)</span></a>
-                  <a href="#" data-href="font-family-secundary" style="font-family:sans-serif">Sans-serif</a>
-                </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Font family</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="font-family-primary" class="active" style="font-family:serif">Serif <span>(default)</span></a>
+                <a href="#" data-href="font-family-secundary" style="font-family:sans-serif">Sans-serif</a>
               </div>
-              <div class="dropdown">
-                <h3 class="dropbtn">Text weight</h3>
-                <div class="dropdown-content">
-                  <a href="#" data-href="text-weight-light" style="font-weight:100">Light</a>
-                  <a href="#" data-href="text-weight-normal" class="active" style="font-weight:500">Normal <span>(default)</span></a>
-                  <a href="#" data-href="text-weight-bold" style="font-weight:900">Bold</a>
-                </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Text weight</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="text-weight-light" style="font-weight:100">Light</a>
+                <a href="#" data-href="text-weight-normal" class="active" style="font-weight:500">Normal <span>(default)</span></a>
+                <a href="#" data-href="text-weight-bold" style="font-weight:900">Bold</a>
               </div>
-              <div class="dropdown">
-                <h3 class="dropbtn">Text transform</h3>
-                <div class="dropdown-content">
-                  <a href="#" data-href="text-transform-normal" class="active" style="text-transform:normal">normal <span>(default)</span></a>
-                  <a href="#" data-href="text-transform-capitalize" style="text-transform:capitalize">capitalize</a>
-                  <a href="#" data-href="text-transform-lowercase" style="text-transform:lowercase">lowercase</a>
-                  <a href="#" data-href="text-transform-uppercase" style="text-transform:uppercase">uppercase</a>
-                </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Text transform</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="text-transform-normal" class="active" style="text-transform:normal">normal <span>(default)</span></a>
+                <a href="#" data-href="text-transform-capitalize" style="text-transform:capitalize">capitalize</a>
+                <a href="#" data-href="text-transform-lowercase" style="text-transform:lowercase">lowercase</a>
+                <a href="#" data-href="text-transform-uppercase" style="text-transform:uppercase">uppercase</a>
               </div>
-              <div class="dropdown">
-                <h3 class="dropbtn">Reading style</h3>
-                <div class="dropdown-content">
-                  <a href="#" data-href="readerStyle-One" class="active">Stick scroll <span>(default)</span></a>
-                  <a href="#" data-href="readerStyle-Two">Just scroll <span>(classic)</span></a>
-                </div>
+            </div>
+            <div class="dropdown">
+              <h3 class="dropbtn">Reading style</h3>
+              <div class="dropdown-content">
+                <a href="#" data-href="readerStyle-One" class="active">Stick scroll <span>(default)</span></a>
+                <a href="#" data-href="readerStyle-Two">Just scroll <span>(classic)</span></a>
               </div>
-            </span>
+            </div>
           </span>
         </span>
         <span class="partButton">
@@ -171,27 +172,23 @@
       <span class="overlay full infoScreen mainScreenHelp" style="display:none;">
         <span class="partInformation">
           <h3>How to ...</h3>
-          <span class="help-list-text">
-            <span class="fullWidth">
-              <h3>Writer</h3>
-              <p>1. Click on the text input field</p>
-              <p>2. Type your text</p>
-              <p>3. Hit <span>Return</span> to submit</p>
-              <p>4. Type your next sentence</p>
-            </span>
+          <span>
+            <h3>Writer</h3>
+            <p>1. Click on the text input field</p>
+            <p>2. Type your text</p>
+            <p>3. Hit <span>Return</span> to submit</p>
+            <p>4. Type your next sentence</p>
           </span>
-          <span class="help-list-text">
-            <span class="fullWidth">
-              <h3>Reader</h3>
-              <h4>Stick Scroll<span>(default)</span></h4>
-              <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
-              <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
-              <p>Keypress Emergency <br><span>Return</span></p>
-              <h4>Just Scroll <span>(classic)</span></h4>
-              <p>Start and Stop scrolling <br><span>Spacebar</span></p>
-              <p>Normal Navigation</p>
-              <p>Keypress Emergency <br><span>Return</span></p>
-            </span>
+          <span>
+            <h3>Reader</h3>
+            <h4>Stick Scroll<span>(default)</span></h4>
+            <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
+            <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
+            <p>Keypress Emergency <br><span>Return</span></p>
+            <h4>Just Scroll <span>(classic)</span></h4>
+            <p>Start and Stop scrolling <br><span>Spacebar</span></p>
+            <p>Normal Navigation</p>
+            <p>Keypress Emergency <br><span>Return</span></p>
           </span>
         </span>
         <span class="partButton">
@@ -206,8 +203,9 @@
       <div>
         <p>
           <button href="#firstScreen" class="sectionNavigation">Go back</button>
-          <button href="#writerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button>
-          <button href="#uploadpage" class="sectionNavigation">Upload autocue&nbsp;&nbsp;<i class="fa fa-upload" aria-hidden="true"></i></button>
+          <button href="#writerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button><br>
+          <button href="#uploadpage" class="sectionNavigation">Upload <i class="fa fa-upload" aria-hidden="true"></i></button>
+          <button href="#readerScreen" class="sectionNavigation">Navigate <i class="fa fa-gamepad" aria-hidden="true"></i></button>
         </p>
       </div>
       <div>

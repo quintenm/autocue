@@ -1,8 +1,11 @@
 @import "reset";
 @import "theming";
+@import "flex";
 $smartphone: "(max-width: 767px)";
 $tablet: "(min-width: 768px) and (max-width: 1024px)";
 $desktop: "(min-width: 1025px)";
+
+
 
 
 body,html,section
@@ -12,6 +15,10 @@ body,html,section
   font-size:1.8vw;
   @media #{$smartphone} {
     font-size:4vw;
+  }
+  &.no-scroll
+  {
+    overflow:hidden;
   }
 }
 .hidden
@@ -35,7 +42,7 @@ hr
 }
 button
 {
-  padding:2vh 10vw;
+  padding:2vh 6vw;
   font-size:5vw;
   font-weight:500;
   cursor:pointer;
@@ -63,6 +70,10 @@ a
   top:0;
   left:0;
   right:0;
+  text-align:left;
+  @include flexbox();
+  flex-wrap: wrap;
+  align-items: flex-start;
   @media #{$smartphone}
   {
     width:96vw;
@@ -78,8 +89,148 @@ a
     width:70vw;
     padding:0 15vw;
   }
+  .part
+  {
+    &Information
+    {
+      height:100vh;
+      overflow:auto;
+      @media #{$smartphone}
+      {
+        width:100%;
+        @include order(2);
+      }
+      @media #{$tablet}
+      {
+        @include flex(2);
+      }
+      @media #{$desktop}
+      {
+      @include flex(2);
+      }
+    }
+    &Button
+    {
 
-  text-align:left;
+      @include flexbox();
+      @media #{$smartphone}
+      {
+        @include flex(1);
+        width:100%;
+        @include order(1);
+        button
+        {
+          @include flex(1);
+          flex-direction: row;
+        }
+      }
+      @media #{$tablet}
+      {
+        @include flex(1);
+        flex-direction: column;
+      }
+      @media #{$desktop}
+      {
+        @include flex(1);
+        flex-direction: column;
+      }
+    }
+  }
+    p
+    {
+      line-height: 1.4;
+      font-size:1em;
+      font-weight:500;
+      br
+      {
+        display: none;
+      }
+      @media #{$smartphone}
+      {
+        line-height: 1.5;
+        width:100%;
+        br
+        {
+          display: block;
+        }
+      }
+      &:nth-last-child(1)
+      {
+        margin-bottom:20px!important;
+      }
+      span
+      {
+        &.alert-text
+        {
+          font-size: 4vw;
+        }
+        &:not(.alert-text)
+        {
+          font-size: .8em;
+          border-width: 2px;
+          border-style: solid;
+          padding: 1px 5px;
+          margin: 0px 5px;
+          border-radius: 5px;
+          @media #{$smartphone}
+          {
+            border-width:.5px;
+            padding: 2px 4px;
+            margin:0 2px;
+          }
+        }
+
+      }
+    }
+    h3
+    {
+      font-size:1.5em;
+      font-weight:700;
+    }
+    h4
+    {
+      font-size: 1.2em;
+      &:nth-of-type(1n+2)
+      {
+        margin-top:1rem;
+      }
+      span
+      {
+        font-size: .6em;
+        font-weight:100;
+      }
+    }
+  }
+  input[type=file] {
+      margin: 0 auto;
+      padding-top:2rem;
+      font-size:1em;
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+      &::before {
+        content: 'Choose .txt file';
+
+        display: inline-block;
+        font-size:1.5rem;
+        outline:none;
+        border-radius:5px;
+        padding: 2vh 10vw;
+        margin: 4vh 1vw;
+        border-width: .2em;
+        border-style:solid;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        background-color:white;
+        display: block;
+        text-align:center;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 7vh;
+      }
+  /*}*/
 }
 .alert
 {
@@ -126,159 +277,6 @@ a
     cursor: pointer;
   }
 }
-.part
-{
-  &Information
-  {
-    display: block;
-    float: left;
-    height:100vh;
-    overflow:auto;
-    @media #{$smartphone}
-    {
-      width:100%;
-    }
-    @media #{$tablet}
-    {
-      width:70%;
-    }
-    @media #{$desktop}
-    {
-      width:70%;
-    }
-  }
-  &Button
-  {
-    width:30%;
-    display: block;
-    float: left;
-    @media #{$smartphone}
-    {
-      width:100%;
-    }
-    @media #{$tablet}
-    {
-      width:30%;
-    }
-    @media #{$desktop}
-    {
-      width:30%;
-    }
-  }
-}
-.help-list-text
-{
-  margin-top:2vw;
-  display: block;
-  font-size:.8rem!important;
-  & > span
-  {
-    &.halfWidth
-    {
-      width:50%;
-    }
-    &.fullWidth
-    {
-      width:100%;
-    }
-    @media #{$smartphone}
-    {
-      width:100%;
-      &:nth-of-type(1n+2)
-      {
-        margin-top:2rem;
-      }
-    }
-    display:block;
-    float:left;
-  }
-  p
-  {
-    line-height: 1.4;
-    font-size:1em;
-    font-weight:500;
-    br
-    {
-      display: none;
-    }
-    @media #{$smartphone}
-    {
-      line-height: 1.5;
-      width:100%;
-      br
-      {
-        display: block;
-      }
-    }
-    &:nth-last-child(1)
-    {
-      margin-bottom:20px!important;
-    }
-    span
-    {
-      font-size: .8em;
-      border-width: 2px;
-      border-style: solid;
-      padding: 1px 5px;
-      margin: 0px 5px;
-      border-radius: 5px;
-      @media #{$smartphone}
-      {
-        border-width:.5px;
-        padding: 2px 4px;
-        margin:0 2px;
-      }
-    }
-  }
-  h3
-  {
-    font-size:1.5em;
-    font-weight:700;
-  }
-  h4
-  {
-    font-size: 1.2em;
-    &:nth-of-type(1n+2)
-    {
-      margin-top:1rem;
-    }
-    span
-    {
-      font-size: .6em;
-      font-weight:100;
-    }
-  }
-}
-input[type=file] {
-    margin: 0 auto;
-    padding-top:2rem;
-    font-size:1.5em;
-    &::-webkit-file-upload-button {
-      visibility: hidden;
-    }
-    &::before {
-      content: 'Upload .txt file';
-
-      display: inline-block;
-      font-size:1.5rem;
-      outline:none;
-      border-radius:5px;
-      padding: 2vh 10vw;
-      margin: 4vh 1vw;
-      border-width: .2em;
-      border-style:solid;
-      white-space: nowrap;
-      -webkit-user-select: none;
-      cursor: pointer;
-      background-color:white;
-      display: block;
-      text-align:center;
-      position: relative;
-      left: 0;
-      right: 0;
-      top: 7vh;
-    }
-}
 :-webkit-full-screen {
   /* properties */
 }
@@ -314,6 +312,12 @@ input[type=file] {
 }
 a.fullscreen
 {
+  @media #{$smartphone}
+  {
+    display: none;
+    opacity:0;
+    visibility:hidden;
+  }
   &:before
   {
     font-family: FontAwesome;

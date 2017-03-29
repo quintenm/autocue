@@ -30,6 +30,12 @@ io.on('connection', function (socket) {
       var room = data.room;
       io.in(room).emit('chat message', msg);
     });
+    socket.on('controlls', function(data){
+      var msg = data.msg;
+      var room = data.room;
+      var msgextra = data.msgextra;
+      io.in(room).emit('controlls', msg, msgextra);
+    });
     socket.on('room', function(room) {
         socket.join(room);
         console.log(room);

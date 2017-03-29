@@ -5,7 +5,6 @@ $(function() {
       readerScrollTop = 0,
       scrollSpeed = 100, //snelheid voor scrollen bij readerStyle-Two
       readerScrollAutoDown = 0;
-
   function token() {
     if(localStorage.getItem("token170103") != false && localStorage.getItem("token170103") === undefined)
     {
@@ -55,20 +54,28 @@ $(function() {
       $(".uploadpage").hide();
     }else if(u == "#mainScreenOptions"){
       $(".mainScreenOptions").show();
+      $("html").addClass("no-scroll");
     }else if(u == "#mainScreenOptionsClose"){
       $(".mainScreenOptions").hide();
+      $("html").removeClass("no-scroll");
     }else if(u == "#mainScreenHelp"){
       $(".mainScreenHelp").show();
+      $("html").addClass("no-scroll");
     }else if(u == "#mainScreenHelpClose"){
       $(".mainScreenHelp").hide();
+      $("html").removeClass("no-scroll");
     }else if(u == "#readerScreenInfo"){
       $(".readerScreenInfo").show();
+      $("html").addClass("no-scroll");
     }else if(u == "#readerScreenInfoClose"){
       $(".readerScreenInfo").hide();
+      $("html").removeClass("no-scroll");
     }else if(u == "#writerScreenInfo"){
       $(".writerScreenInfo").show();
+      $("html").addClass("no-scroll");
     }else if(u == "#writerScreenInfoClose"){
       $(".writerScreenInfo").hide();
+      $("html").removeClass("no-scroll");
     }else if(u == "#uploadButton"){
       if (!window.FileReader) {
           alert('Your browser is not supported')
@@ -86,7 +93,7 @@ $(function() {
           alert('Please upload a file before continuing')
       }
     } else {
-      console.log(u + ": Report to developer");
+      console.log(u + ": There was a button that won't work, Report to the developer");
       alert(u + ": Report to developer");
     }
   });
@@ -98,8 +105,6 @@ $(function() {
           for (index = 0, len = results.length; index < len; ++index) {
             socket.emit('chat message', { room: room, msg: results[index]});
           }
-          //$('#name').val(results[0]);
-          //$('#age').val(results[1]);
       }
   }
 
@@ -145,7 +150,7 @@ $(function() {
     $('body').addClass(a);
   });
   $('#createRoom').click(function(){
-
+    //empty
   });
   var readPosition = 0;
   $(document).keydown(function(e) {
@@ -155,10 +160,8 @@ $(function() {
       switch(e.which) {
           //alert
           case 13: // return
-            $('.alert-text').text('There is a problem reported');
-            $('.alert').show();
+            socket.emit('controlls', { room: room, msg: "alert",msgextra: null});
           break;
-
       }
     }
     //readerStyle-One
@@ -173,7 +176,7 @@ $(function() {
             if(readPosition != "0"){
               readPosition--;
             }
-            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
+            socket.emit('controlls', { room: room, msg: "position",msgextra: readPosition});
           break;
 
           case 69: // character e
@@ -185,7 +188,7 @@ $(function() {
             if(readPosition != ($(".messagesRead div").length - 1)){
               readPosition++;
             }
-            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
+            socket.emit('controlls', { room: room, msg: "position",msgextra: readPosition});
           break;
 
           default: return; // exit this handler for other keys
@@ -204,7 +207,7 @@ $(function() {
             if(readPosition != "0"){
               readPosition--;
             }
-            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
+            socket.emit('controlls', { room: room, msg: "position",msgextra: readPosition});
           break;
           //down
           case 69: // character e
@@ -215,27 +218,14 @@ $(function() {
             if(readPosition != ($(".messagesRead div").length - 1)){
               readPosition++;
             }
-            $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * readPosition }, 'fast');
+            socket.emit('controlls', { room: room, msg: "position",msgextra: readPosition});
           break;
 
           case 32: // spacebar
+          //hier
           readerScrollTop = $(window).scrollTop();
-            if (readerTimerScroll == true){
-              readerTimerScroll = false;
-              readerScrollAutoDown =
-                setInterval(function () {
-                  readerScrollTop += scrollSpeed;
-                  if($(window).scrollTop() + $(window).height() > $(document).height() - 500){
-                    clearInterval(readerScrollAutoDown);
-                    $('.alert-text').text('End of cue');
-                    $('.alert').show();
-                  }
-                  $("body").animate({ scrollTop: readerScrollTop }, 300, 'linear');
-                }, 300);
-            } else if(readerTimerScroll == false){
-              readerTimerScroll = true;
-              clearInterval(readerScrollAutoDown);
-            }
+          socket.emit('controlls', { room: room, msg: "positionscrollauto",msgextra: readerScrollTop});
+
 
           default: return; // exit this handler for other keys
       }
@@ -261,6 +251,36 @@ var socket = io.connect();
       $('.messagesRead').append('<div><p>'+ msg +'</p></div>');
       $('#m').focus();
     });
+    socket.on('controlls', function(msg, msgextra) {
+      if(msg == "alert")
+      {
+        $('.alert-text').text('There is a problem reported');
+        $('.alert').show();
+      }else if(msg =="position"){
+        $("body").animate({ scrollTop: ($('.messagesRead').height() / $(".messagesRead div").length) * msgextra }, 'fast');
+      }else if(msg =="positionscrollauto"){
+        //hier ook
+        var readerScrollTop = msgextra;
+        if (readerTimerScroll == true){
+          readerTimerScroll = false;
+          readerScrollAutoDown =
+            setInterval(function () {
+              readerScrollTop += scrollSpeed;
+              if($(window).scrollTop() + $(window).height() > $(document).height() - 500){
+                clearInterval(readerScrollAutoDown);
+                $('.alert-text').text('End of cue');
+                $('.alert').show();
+              }
+              $("body").animate({ scrollTop: readerScrollTop }, 700, 'linear');
+            }, 300);
+        } else if(readerTimerScroll == false){
+          readerTimerScroll = true;
+          clearInterval(readerScrollAutoDown);
+        }
+      }else {
+        console.log(msgextra + ": Unknown error in width controlls, report to developer")
+      }
+    });
     $('#createRoom').click(function(e){
       e.preventDefault();
 
@@ -268,15 +288,7 @@ var socket = io.connect();
       socket.emit('room',roomId);
       $('.alert-text').text('Room has been created');
       $('.alert').show();
-
     });
-
-
-
-
-
-
-
 });
 
 // Find the right method, call on correct element
