@@ -1,6 +1,6 @@
 {
   "name": "DigiPromp",
-  "version": "0.6.2",
+  "version": "1.4",
   "description": "",
   "main": "server.js",
   "dependencies": {
@@ -15,7 +15,17 @@
     "start": "node server.js"
   },
   "devDependencies": {},
-  "keywords": [],
+  "keywords": [
+    "autocue",
+    "webbassed",
+    "web",
+    "digital",
+    "autoprompter",
+    "herokuapp",
+    "livestreams",
+    "internet",
+    "presentations"
+  ],
   "author": "Quinten Mares",
   "license": "ISC"
 }

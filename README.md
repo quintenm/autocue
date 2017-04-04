@@ -1,12 +1,12 @@
 # Digital Autocue
-A  digital online autocue for a faster way to communicate
+A  digital webbassed online autocue for a faster way to communicate
 
 It has a simple writer and reader side
 
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.35 alpha
+Version 1.4 alpha
 
 # Project
 * It's a simple side project, based on a simple idea.
