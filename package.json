@@ -1,7 +1,7 @@
 {
   "name": "DigiPromp",
-  "version": "1.4",
-  "description": "",
+  "version": "1.4.0",
+  "description": "A digital online autocue, for a faster way to communicate. See demo @ http://digitalautocue.herokuapp.com",
   "main": "server.js",
   "dependencies": {
     "express": "^4.14.0",
@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "npm install"
   },
   "devDependencies": {},
   "keywords": [
@@ -27,5 +28,6 @@
     "presentations"
   ],
   "author": "Quinten Mares",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/quintenm/digitalautocue"
 }
