@@ -13,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-prebuild": "npm install && echo \"npm installation sucess\"",
+    "heroku-prebuild": "npm install",
   },
   "devDependencies": {},
   "keywords": [
