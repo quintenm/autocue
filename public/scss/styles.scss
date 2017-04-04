@@ -108,6 +108,12 @@ a
       {
       @include flex(2);
       }
+      .quote
+      {
+        padding:10px 20px;
+        border-radius:4px;
+        font-weight: 900;
+      }
     }
     &Button
     {

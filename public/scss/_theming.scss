@@ -44,15 +44,36 @@
     }
     #firstScreen
     {
-    .navigation span
-    {
-      color: $color;
-    }
-    .content
+      .navigation span
+      {
+        color: $color;
+      }
+      .content
       {
         .dropdown button .dropdown-content a.active
         {
           background-color:rgba($color,.5);
+        }
+      }
+    }
+    #writerScreen,
+    #readerScreen
+    {
+      p
+      {
+        b
+        {
+          background-color: $color;
+        }
+      }
+    }
+    .part
+    {
+      &Information
+      {
+        .quote
+        {
+          background-color: $color;
         }
       }
     }
@@ -78,7 +99,6 @@
     }
     p,
     h3,
-    h4,
     footer
     {
       color:$color;
@@ -121,6 +141,27 @@
     section, #firstScreen .content
     {
       background: $color;
+    }
+    #writerScreen,
+    #readerScreen
+    {
+      p
+      {
+        b
+        {
+          color: $color;
+        }
+      }
+    }
+    .part
+    {
+      &Information
+      {
+        .quote
+        {
+          color: $color;
+        }
+      }
     }
     button
     {
