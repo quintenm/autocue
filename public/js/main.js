@@ -3,17 +3,23 @@ $(function() {
       a,b,
       readerTimerScroll = true,
       readerScrollTop = 0,
-      scrollSpeed = 100, //snelheid voor scrollen bij readerStyle-Two
-      readerScrollAutoDown = 0;
+      scrollSpeed = 100, //scroll speed readerStyle-Two
+      readerScrollAutoDown = 0,
+      defaultRoomName = ""; // set a default roomname.
   function token() {
-    if(localStorage.getItem("token170103") != false && localStorage.getItem("token170103") === undefined)
+    if(localStorage.getItem("token170103") !== null && localStorage.getItem("token170103") != "")
     {
       b = localStorage.getItem('token170103');
       return b;
     }else{
-  	  var randAnimal = arrAnimals[Math.floor(Math.random() * arrAnimals.length)].toLowerCase();
-      var number = Math.floor(Math.random() * 1000) + 1;
-  	  return randAnimal +""+ number;
+      if(defaultRoomName == ""){
+        var randAnimal = arrAnimals[Math.floor(Math.random() * arrAnimals.length)].toLowerCase();
+        var number = Math.floor(Math.random() * 1000) + 1;
+    	  return randAnimal +""+ number;
+      }else {
+    	  return defaultRoomName;
+      }
+
     }
   }
   $('#room').val(token);
@@ -92,11 +98,36 @@ $(function() {
       } else {
           alert('Please upload a file before continuing')
       }
+    }else if(u == "#downloadButton"){
+      download('DigitalAutocue',collectAndPullText());
     } else {
       console.log(u + ": There was a button that won't work, Report to the developer");
       alert(u + ": Report to developer");
     }
   });
+  function download(filename, text)
+  {
+    var d = new Date();
+    filename = filename + "_" + d.toLocaleDateString() + "_" + d.getHours() + "-" + d.getMinutes() + "-" + d.getSeconds() + ".txt";
+    var element = document.createElement("a");
+    element.setAttribute('href', "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+    element.setAttribute('download',filename);
+
+    element.style.display = "none";
+    document.body.appendChild(element);
+
+    element.click();
+    document.body.removeChild(element);
+  }
+  function collectAndPullText(){
+    var text = "", container;
+    container = document.getElementById('messageWriter').getElementsByTagName('p');
+    for (var i = 2, len = container.length; i < len; i++)
+    {
+      text += container[i].innerHTML + "\n";
+    }
+    return text;
+  }
   function processFile(e) {
       var file = e.target.result,
           results;
@@ -247,7 +278,8 @@ var socket = io.connect();
       return false;
     });
     socket.on('chat message', function(msg) {
-      $('.messagesWrite').append('<div><p contenteditable="true">'+ msg +'</p></div>');
+      console.log(msg);
+      $('.messagesWrite').append('<div><p contenteditable="false">'+ msg +'</p></div>');//contenteditable will be soon true, so you can edit later.
       $('.messagesRead').append('<div><p>'+ msg +'</p></div>');
       $('#m').focus();
     });

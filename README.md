@@ -1,12 +1,12 @@
 # Digital Autocue
-A  digital webbassed online autocue for a faster way to communicate
+A  digital web based online autocue for a faster way to communicate
 
 It has a simple writer and reader side
 
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.4 alpha
+Version 1.5 alpha
 
 # Project
 * It's a simple side project, based on a simple idea.
@@ -18,15 +18,16 @@ Version 1.4 alpha
 * Display live the entered text in Writer (Reader).
 * Work in rooms.
 * Switch fast between Writer and Reader.
-* Set somme customisation, such as Font-family, text-transform, text-weight, hightlighted color, background-color and reading style.
+* Set somme customization, such as Font-family, text-transform, text-weight, highlighted color, background-color and reading style.
 * Font scales with browser width.
-* Save customisation or roomname and reset it, localStorage based.
+* Save customization or room-name and reset it, localStorage based.
 * Keyboard trigger for scrolling or emergency call to writer.
 * Upload txt-file with autocue text for a fast input.
+* Download your text in a txt-file on writer side.
 * View all in Fullscreen mode.
 * Supports html and css input.
 * Emergency button to alert everyone with visual text.
-* Control de scrollposition via other devices.
+* Control de scroll-position via other devices.
 
 # What it will do in future
 * Auto insert comments from social media (It would be cool).
@@ -41,7 +42,7 @@ Version 1.4 alpha
 * You're dreaming of a way to link your  Facebook live or YouTube live chat with your autocue. This is a feature that will active in the future.
 
 # A side note
-* With every page refresh all the input is lost.
+* With every page refresh all the input is lost. Just for safety.
 
 # Used libraries
 * jQuery v1.12.4
@@ -52,18 +53,18 @@ Version 1.4 alpha
 
 # How to install it
 1. Install nodejs and npm (install Xcode if necessary)
-+ Run `npm install` in your terminal to install express and socket.io if is not allready installed
++ Run `npm install` in your terminal to install express and socket.io if is not already installed
 + Run `node server.js` in your terminal
 + Open your browser en open two separated windows, surf to  `http://localhost:3000`
 + Click to Writer or Reader for each tab.
 + Discover ...
 
 # How to use it
-* Load webpage on serveral devices
+* Load webpage on several devices
 * A **room** will be created automatically, you can rename it and save as your default, confirm by clicking ** join **
 * Be sure that all other devices joined the same room.
 * Click on **Writer** and insert your text, by pressing the `enter-key`
-* You can upload an txt-file via **Upload autocue** see the demofile as example.
+* You can upload an txt-file via **Upload autocue** see the demo file as example.
 
 OR
 
@@ -121,7 +122,15 @@ OR
 * Normal Navigation
 * Keypress Emergency `Return`
 
-**Side note**: To use with a own local server and multiple separated devices, surf to the local ip-adress of th computer with the running server. *Example http://192.168.0.10:3000*
+###### Known issue
+* Device to device with different internet browsers.
+* Google Chrome recommended above Safari
+
+###### Submit errors
+Submit your errors, questions and suggestions on [github - issues](https://github.com/quintenm/digipromp/issues)
+
+
+**Side note**: To use with a own local server and multiple separated devices, surf to the local IP address of the computer with the running server. *Example http://192.168.0.10:3000*
 
 # Online Demo
 You can find a working demo
@@ -134,4 +143,4 @@ You can find a working demo
 * [quintenm.github.io](http://quintenm.github.io/2016/12/31/Digital-autocue.html)
 
 ## Created by
-[quinten.mares.be](http://quinten.mares.be) — [heroku Digital Autocue Demo](http://digitalautocue.herokuapp.com) &copy; 2016 - 2017
+[quinten.mares.be](http://quinten.mares.be) — [Heroku Digital Autocue Demo](http://digitalautocue.herokuapp.com) &copy; 2016 - 2017

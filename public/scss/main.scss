@@ -28,7 +28,15 @@ div:not(.dropdown,.alert,.dropdown *, .part)
         display:table-cell;
         h1
         {
-          font-size: 15vw;
+          @media #{$desktop} {
+            font-size: 13vw;
+          }
+          @media #{$tablet} {
+            font-size: 16vw;
+          }
+          @media #{$smartphone} {
+            font-size: 18vw;
+          }
           color:white;
           font-family:"Helvetica Neue", "Helvetica", "Verdana", "Arial", "sans-serif";
           text-align:center;
@@ -129,7 +137,6 @@ div:not(.dropdown,.alert,.dropdown *, .part)
         min-height:5vh;
         border-width:.15em;
         margin: 0;
-
         @media #{$desktop} {
           min-width:20vw;
         }

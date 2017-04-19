@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Digital Online Autocue — for a faster way to communicate</title>
+  <title>Digital Autocue — online for a faster way to communicate</title>
   <link rel="stylesheet" href="css/styles.min.css" media="screen">
   <link rel="stylesheet" href="css/main.min.css" media="screen" id="varCss">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -39,7 +39,6 @@
         <p>4. Type your next sentence</p>
         <h3>Navigation</h3>
         <p>Click on <i class="fa fa-upload" aria-hidden="true"></i> to upload your own Autocue text</p>
-        <p>Click on <i class="fa fa-gamepad" aria-hidden="true"></i> to navigate on Reader.</p>
         <h3>Writing</h3>
         <p>Use &lt;b&gt; and &lt;/b&gt; to <b class="quote">quote</b></p>
       </span>
@@ -72,7 +71,7 @@
   <section id="firstScreen">
     <div class="backgroundImage">
       <div class="title">
-        <h1>Digi Autocue</h1>
+        <h1>Digital Autocue</h1>
         <h3>—</h3>
         <h3>
       A digital autocue for a fast one-way communication
@@ -88,7 +87,7 @@
         <p>Choose your own secret roomname</p>
         <br>
         <input type="text" class="input room" name="firstname" id="room" value="">
-        <button type="button" class="input submit" value="join" id="createRoom">join</button>
+        <button type="button" class="input submit" value="join" id="createRoom">Join room</button>
       </div>
 
       <div class="part part2 hidden">
@@ -177,6 +176,13 @@
         <span class="partInformation">
           <h3>How to ...</h3>
           <span>
+            <h3>Options</h3>
+            <p>- Choos your look and feel</p>
+            <p>- Take a reading style (Stick Scroll or Just Scroll)</p>
+            <p>- <i class="fa fa-floppy-o" aria-hidden="true"></i> Save your settings and your roomname</p>
+            <p>- <i class="fa fa-history" aria-hidden="true"></i> Reset to default settings</p>
+          </span>
+          <span>
             <h3>Writer</h3>
             <p>1. Click on the text input field</p>
             <p>2. Type your text</p>
@@ -203,13 +209,13 @@
     </div>
   </section>
   <section id="writerScreen" class="hidden">
-    <div class="messagesWrite">
+    <div class="messagesWrite" id="messageWriter">
       <div>
         <p>
           <button href="#firstScreen" class="sectionNavigation">Go back</button>
           <button href="#writerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button><br>
           <button href="#uploadpage" class="sectionNavigation">Upload <i class="fa fa-upload" aria-hidden="true"></i></button>
-          <button href="#readerScreen" class="sectionNavigation">Navigate <i class="fa fa-gamepad" aria-hidden="true"></i></button>
+          <button href="#downloadButton" class="sectionNavigation">Download <i class="fa fa-download" aria-hidden="true"></i></button>
         </p>
       </div>
       <div>

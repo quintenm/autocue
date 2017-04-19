@@ -1,3 +1,4 @@
+// minOnSave: false
 var express = require('express');
 
 var app = express();
@@ -5,6 +6,14 @@ var server = require('http').createServer(app);
 var port = process.env.PORT || 3000;
 
 var path = require('path');
+// IP-adress
+
+var os = require('os');
+
+var interfaces = os.networkInterfaces();
+var addresses = [];
+
+// end IP-adress
 
 // Define the port to run on
 app.use(express.static(__dirname + '/public'));
@@ -14,6 +23,19 @@ app.use(express.static(__dirname + '/public'));
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
+  console.log('Go to\n');
+  console.log('\x1b[36m%s\x1b[0m','http://localhost:' + port);
+  console.log('\non your computer\nor on other devices in the same network\n');
+
+
+  for (var k in interfaces) {
+      for (var k2 in interfaces[k]) {
+          var address = interfaces[k][k2];
+          if (address.family === 'IPv4' && !address.internal) {
+              console.log('\x1b[36m%s\x1b[0m','http://' + address.address + ':' + port);
+          }
+      }
+  }
 });
 
 
