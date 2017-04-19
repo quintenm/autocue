@@ -180,9 +180,6 @@ $(function() {
 
     $('body').addClass(a);
   });
-  $('#createRoom').click(function(){
-    //empty
-  });
   var readPosition = 0;
   $(document).keydown(function(e) {
     //Alert
@@ -313,9 +310,8 @@ var socket = io.connect();
         console.log(msgextra + ": Unknown error in width controlls, report to developer")
       }
     });
-    $('#createRoom').click(function(e){
+    $('#createRoom, #arrow-right').click(function(e){
       e.preventDefault();
-
       var roomId = $('#room').val();
       socket.emit('room',roomId);
       $('.alert-text').text('Room has been created');

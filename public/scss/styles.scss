@@ -162,13 +162,15 @@ a
       }
       &:nth-last-child(1)
       {
-        margin-bottom:20px!important;
+        margin-bottom:10px!important;
+        margin-top:10px!important;
       }
       span
       {
         &.alert-text
         {
           font-size: 4vw;
+          vertical-align: middle;
         }
         &:not(.alert-text)
         {
@@ -240,15 +242,16 @@ a
 }
 .alert
 {
-
   height:15vh;
   display:table;
   font-weight:900;
   p
   {
     font-size: 4.5vw;
-    display:table-cell;
-    vertical-align:middle;
+    button
+    {
+      vertical-align: middle;
+    }
   }
 }
 .full
