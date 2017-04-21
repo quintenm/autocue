@@ -18,6 +18,12 @@ var addresses = [];
 // Define the port to run on
 app.use(express.static(__dirname + '/public'));
 
+app.get('/reader', function (req, res) {
+    res.sendFile(__dirname + '/public/reader.html');
+});
+app.get('/writer', function (req, res) {
+    res.sendFile(__dirname + '/public/writer.html');
+});
 
 // Listen for requests
 
@@ -58,8 +64,8 @@ io.on('connection', function (socket) {
       var msgextra = data.msgextra;
       io.in(room).emit('controlls', msg, msgextra);
     });
-    socket.on('room', function(room) {
+    socket.on('room', function( room) {
         socket.join(room);
-        console.log(room);
+        console.log('user joined room ' + room);
     });
 });

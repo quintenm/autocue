@@ -6,7 +6,7 @@ It has a simple writer and reader side
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.5 alpha
+Version 1.6 alpha
 
 # Project
 * It's a simple side project, based on a simple idea.
@@ -20,7 +20,7 @@ Version 1.5 alpha
 * Switch fast between Writer and Reader.
 * Set somme customization, such as Font-family, text-transform, text-weight, highlighted color, background-color and reading style.
 * Font scales with browser width.
-* Save customization or room-name and reset it, localStorage based.
+* Save customization or room-name and reset it, localStorage based. Get roomname via url.
 * Keyboard trigger for scrolling or emergency call to writer.
 * Upload txt-file with autocue text for a fast input.
 * Download your text in a txt-file on writer side.
@@ -135,6 +135,7 @@ Submit your errors, questions and suggestions on [github - issues](https://githu
 # Online Demo
 You can find a working demo
 [digitalautocue.herokuapp.com](https://digitalautocue.herokuapp.com)
+Start your room directly via url: [digitalautocue.herokuapp.com?room=demoroom](https://digitalautocue.herokuapp.com?room=demoroom)
 
 # Online uri
 * [demo heroku.com](http://digitalautocue.herokuapp.com)

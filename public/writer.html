@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Digital Autocue — online for a faster way to communicate</title>
+    <link rel="stylesheet" href="../css/styles.min.css" media="screen">
+    <link rel="stylesheet" href="../css/writer.min.css" media="screen" id="varCss">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  </head>
+  <body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
+    <!-- default -->
+    <a onclick="launchFullscreen(document.documentElement);" class="fullscreen expand"></a>
+    <div class="overlay alert" style="display: none;">
+      <p style="text-align:center;"><span class="alert-text"></span>
+        <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </p>
+    </div>
+    <!-- end default -->
+    <!-- upload -->
+    <div class="overlay full infoScreen uploadpage" style="display: none;">
+      <span class="partInformation">
+        <span>
+          <h3>Upload your text</h3>
+          <input type="file" class="file-input" id="file" accept='.txt'>
+        </span>
+      </span>
+      <span class="partButton">
+        <button href="#uploadButton" class="sectionNavigation" id="upload"><i class="fa fa-upload" aria-hidden="true"></i></button>
+        <button href="#uploadClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </span>
+    </div>
+    <!-- end upload -->
+    <!-- infoscreen writer -->
+    <div class="overlay full infoScreen writerScreenInfo" style="display: none;">
+      <span class="partInformation">
+        <h3>How to ...</h3>
+        <span>
+          <h3>Writer</h3>
+          <p>1. Click on the text input field</p>
+          <p>2. Type your text</p>
+          <p>3. Hit <span>Return</span> to submit</p>
+          <p>4. Type your next sentence</p>
+          <h3>Navigation</h3>
+          <p>Click on <i class="fa fa-upload" aria-hidden="true"></i> to upload your own Autocue text</p>
+          <h3>Writing</h3>
+          <p>Use &lt;b&gt; and &lt;/b&gt; to <b class="quote">quote</b></p>
+        </span>
+      </span>
+      <span class="partButton">
+        <button href="#writerScreenInfoClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </span>
+    </div>
+    <!-- end infoscreen writer -->
+    <!-- start writer screen -->
+    <section id="writerScreen">
+      <div class="messagesWrite" id="messageWriter">
+        <div>
+          <p>
+            <button href="#firstScreen" class="sectionNavigation">Go back</button>
+            <button href="#writerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button><br>
+            <button href="#uploadpage" class="sectionNavigation">Upload <i class="fa fa-upload" aria-hidden="true"></i></button>
+            <button href="#downloadButton" class="sectionNavigation">Download <i class="fa fa-download" aria-hidden="true"></i></button>
+          </p>
+        </div>
+        <div>
+          <p>Add in the active textbox your text.
+            <br> It wil be displayed in Reader.</p>
+        </div>
+      </div>
+      <div>
+        <form id="inputForm" action="">
+          <input id="m" autocomplete="off" placeholder="Click to type ..." />
+          <button class="hidden">Send</button>
+        </form>
+      </div>
+    </section>
+    <!-- end writer screen -->
+    <!-- start scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://use.fontawesome.com/6517cff0d0.js"></script>
+    <script src="../js/main_writer.min.js" charset="utf-8"></script>
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-50364010-9', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- end scripts -->
+  </body>
+</html>

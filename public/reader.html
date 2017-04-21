@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Digital Autocue — online for a faster way to communicate</title>
+    <link rel="stylesheet" href="../css/styles.min.css" media="screen">
+    <link rel="stylesheet" href="../css/reader.min.css" media="screen" id="varCss">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  </head>
+  <body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
+    <!-- default -->
+    <a onclick="launchFullscreen(document.documentElement);" class="fullscreen expand"></a>
+    <div class="overlay alert" style="display: none;">
+      <p style="text-align:center;"><span class="alert-text"></span>
+        <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </p>
+    </div>
+    <!-- end default -->
+    <!-- infoscreen reader -->
+    <div class="overlay full infoScreen readerScreenInfo" style="display: none;">
+      <span class="partInformation">
+        <h3>How to ...</h3>
+        <span>
+          <h3>Reader</h3>
+          <h4>Stick Scroll <span>(default)</span></h4>
+          <p>Keypress Previous <br><span>A</span><span>Q</span><span>F</span><span><i class="fa fa-caret-left" aria-hidden="true"></i></span><span><i class="fa fa-caret-up" aria-hidden="true"></i></span></p>
+          <p>Keypress Next <br><span>E</span><span>D</span><span>J</span><span><i class="fa fa-caret-right" aria-hidden="true"></i></span><span><i class="fa fa-caret-down" aria-hidden="true"></i></span><span>Spacebar</span></p>
+          <p>Keypress Emergency <br><span>Return</span></p>
+          <h4>Just Scroll <span>(classic)</span></h4>
+          <p>Start and Stop scrolling <br><span>Spacebar</span></p>
+          <p>Normal Navigation</p>
+          <p>Keypress Emergency <br><span>Return</span></p>
+          <h3>Writing</h3>
+          <p>Use &lt;b&gt; and &lt;/b&gt; to <b class="quote">quote</b></p>
+        </span>
+      </span>
+      <span class="partButton">
+        <button href="#readerScreenInfoClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </span>
+    </div>
+    <!-- end infoscreen reader -->
+    <!-- start reader screen -->
+    <section id="readerScreen">
+      <div class="messagesRead">
+        <div>
+          <p>
+            <button href="#firstScreen" class="sectionNavigation">Go back</button>
+            <button href="#readerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button>
+            <br>
+            <span style="font-size: .5em;">Scroll down <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </p>
+        </div>
+        <div>
+          <p>Add add your text in the Writer-section.
+            <br>It wil be displayed here.</p>
+        </div>
+      </div>
+    </section>
+    <!-- end reader screen -->
+    <!-- start scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://use.fontawesome.com/6517cff0d0.js"></script>
+    <script src="../js/main_reader.min.js" charset="utf-8"></script>
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-50364010-9', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- end scripts -->
+  </body>
+</html>
