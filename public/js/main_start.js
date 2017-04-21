@@ -1,7 +1,7 @@
 $(function() {
   "use strict";
   var arrAnimals = ["ant","bird"," cat","chicken","cow","dog","elephant","fish","fox","horse","kangaroo","lion","monkey","penguin","pig","rabbit","sheep","tiger","whale","wolf","zebra"],
-      a,b,
+      a,b,u,
       readerTimerScroll = true,
       readerScrollTop = 0,
       scrollSpeed = 100, //scroll speed readerStyle-Two

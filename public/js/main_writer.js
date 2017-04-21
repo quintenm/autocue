@@ -1,7 +1,8 @@
 $(function() {
   "use strict";
   //start GLOBAL
-  var getURLToken = getQueryVariable("room")
+  var getURLToken = getQueryVariable("room"),
+  b;
   if(getURLToken == false)
   {
     if(localStorage.getItem("design170103") !== null || localStorage.getItem("design170103") != null)
