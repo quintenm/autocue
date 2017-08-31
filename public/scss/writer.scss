@@ -2,6 +2,7 @@
 //{
 //  font-family:"Times New Roman","Times", "Serif";
 //}
+@import "fb";
 #writerScreen
 {
   div
@@ -9,11 +10,13 @@
     display: table;
     width:100vw;
     height:25vh;
-  p,input:not([type=file])
+  p,textarea
   {
-    min-width:94vw;
+    width: 100%;
+    max-width: 100%;
+    min-width:50vw;
     min-height:25vh;
-    max-height:100px;
+    max-height:100vh;
     margin:0;
     border:none;
     padding:1vh 3vw;
@@ -21,6 +24,7 @@
     font-size:2rem;
     outline:none;
     display: table-cell;
+    box-sizing: border-box;
     vertical-align: middle;
     transition: background-color .3s ease;
     &:focus
@@ -37,9 +41,37 @@
       font-weight: 900;
     }
   }
-  input:not([type=file])
+  textarea
   {
-    background-color:rgba(#EFEFEF,.2);
+    background-color:rgba(#EFEFEF,.8);
   }
+  }
+  .editContainer
+  {
+    display: flex;
+    .item
+    {
+      width: 100vw;
+      margin: auto;
+      min-width: 50vw;
+      max-width: 100vw;
+    }
+    &.FacebookscreenVisible
+    {
+      .item
+      {
+        &.facebookLiveScreen
+        {
+          padding: 0 3vw 3vh 3vw;
+          box-sizing: border-box;
+        }
+        width: 50vw;
+        h3
+        {
+          margin: auto;
+        }
+      }
+    }
+
   }
 }

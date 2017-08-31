@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Digital Autocue — online for a faster way to communicate</title>
+    <title>Digital Autocue — online for a faster way to communicate between social media and presentator</title>
     <link rel="stylesheet" href="../css/styles.min.css" media="screen">
     <link rel="stylesheet" href="../css/reader.min.css" media="screen" id="varCss">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   </head>
   <body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
     <!-- default -->
-    <a onclick="launchFullscreen(document.documentElement);" class="fullscreen expand"></a>
+    <a href="#fullscreen" class="sectionNavigation fullscreen fa-expand"></a>
     <div class="overlay alert" style="display: none;">
       <p style="text-align:center;"><span class="alert-text"></span>
         <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -47,6 +47,9 @@
             <button href="#firstScreen" class="sectionNavigation">Go back</button>
             <button href="#readerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button>
             <br>
+            <button href="#screenFlipHorizontal" class="sectionNavigation"><i class="fa fa-arrows-h" aria-hidden="true"></i></button>
+            <button href="#screenFlipVertical" class="sectionNavigation"><i class="fa fa-arrows-v" aria-hidden="true"></i></button>
+            <br>
             <span style="font-size: .5em;">Scroll down <i class="fa fa-angle-down" aria-hidden="true"></i></span>
           </p>
         </div>
@@ -60,7 +63,6 @@
     <!-- start scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://use.fontawesome.com/6517cff0d0.js"></script>
     <script src="../js/main_reader.min.js" charset="utf-8"></script>
     <script>
       (function(i, s, o, g, r, a, m) {

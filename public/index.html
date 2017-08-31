@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Digital Autocue — online for a faster way to communicate</title>
+  <title>Digital Autocue — online for a faster way to communicate between social media and presentator</title>
   <link rel="stylesheet" href="css/styles.min.css" media="screen">
   <link rel="stylesheet" href="css/main.min.css" media="screen" id="varCss">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -10,7 +10,7 @@
 <body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
   <span id="defaultRoomName" style="display:none;visibility:none;opacity:0;height:0;"></span>
   <!-- default -->
-  <a onclick="launchFullscreen(document.documentElement);" class="fullscreen expand"></a>
+  <a href="#fullscreen" class="sectionNavigation fullscreen fa-expand"></a>
   <div class="overlay alert" style="display: none;">
     <p style="text-align:center;"><span class="alert-text"></span>
       <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -37,6 +37,7 @@
         <p>Choose your own secret roomname</p>
         <br>
         <input type="text" class="input room" name="firstname" id="room" value="">
+        <button href="#mainScreenRandom" class="sectionNavigation" title="create random name for room"><i class="fa fa-random" aria-hidden="true"></i></button>
         <button href="#mainScreenNext" class="sectionNavigation input submit" value="join" id="createRoom">Join room</button>
       </div>
 
@@ -112,8 +113,7 @@
           </span>
         </span>
         <span class="partButton">
-          <button href="#save" class="sectionNavigation" title="save settings and room"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
-          <button href="#reset" class="sectionNavigation buttonExeption" title="restore settings to default"><i class="fa fa-history" aria-hidden="true"></i></button>
+          <button href="#reset" class="sectionNavigation buttonExeption" title="restore settings to default"><i class="fa fa-refresh" aria-hidden="true"></i></button>
           <button href="#mainScreenOptionsClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
         </span>
       </span>
@@ -124,8 +124,8 @@
             <h3>Options</h3>
             <p>- Choos your look and feel</p>
             <p>- Take a reading style (Stick Scroll or Just Scroll)</p>
-            <p>- <i class="fa fa-floppy-o" aria-hidden="true"></i> Save your settings and your roomname</p>
-            <p>- <i class="fa fa-history" aria-hidden="true"></i> Reset to default settings</p>
+            <p>- <i class="fa fa-floppy-o" aria-hidden="true"></i> Automatic save when option is selected</p>
+            <p>- <i class="fa fa-refresh" aria-hidden="true"></i> Reset to default settings</p>
           </span>
           <span>
             <h3>Writer</h3>
@@ -150,14 +150,13 @@
           <button href="#mainScreenHelpClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
         </span>
       </span>
-      <footer><a href="http://quinten.mares.be" target="_blank">quinten.mares.be</a> — <a href="https://github.com/quintenm/digitalautocue" target="_blank">Github.com Digital Autocue</a> &copy; 2017</footer>
+      <footer><a href="http://quinten.mares.be" target="_blank">quinten.mares.be</a> — <a href="https://github.com/quintenm/digitalautocue" target="_blank">Github.com Digital Autocue</a> <i class="fa fa-copyright"></i> 2017</footer>
     </div>
   </section>
   <!-- end intro screen -->
   <!-- start scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="https://use.fontawesome.com/6517cff0d0.js"></script>
   <script src="js/main_start.min.js" charset="utf-8"></script>
   <script>
     (function(i, s, o, g, r, a, m) {

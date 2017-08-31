@@ -6,7 +6,7 @@ It has a simple writer and reader side
 For use and support with
 Live interviews (for internet) or Presentations
 
-Version 1.6 alpha
+Version 1.7 alpha
 
 # Project
 * It's a simple side project, based on a simple idea.
@@ -19,6 +19,8 @@ Version 1.6 alpha
 * Work in rooms.
 * Switch fast between Writer and Reader.
 * Set somme customization, such as Font-family, text-transform, text-weight, highlighted color, background-color and reading style.
+* Auto-save all made settings
+* mirror reader screen vertically and horizontally
 * Font scales with browser width.
 * Save customization or room-name and reset it, localStorage based. Get roomname via url.
 * Keyboard trigger for scrolling or emergency call to writer.
@@ -28,9 +30,10 @@ Version 1.6 alpha
 * Supports html and css input.
 * Emergency button to alert everyone with visual text.
 * Control de scroll-position via other devices.
+* show the latest live comments feed of a **Facebook live video** on a personal page
 
 # What it will do in future
-* Auto insert comments from social media (It would be cool).
+* edit published comments and facebook live comments of pages
 
 # **Hey, for what reason will I use this awesome Autocue**
 * As a presenter of your show you need a good overview of the last minute created questions.
@@ -49,7 +52,7 @@ Version 1.6 alpha
 * NodeJS v4.1
 * Express v4.14
 * Socket.io v1.5.1
-* fontawesome.io
+* ~~fontawesome.io~~
 
 # How to install it
 1. Install nodejs and npm (install Xcode if necessary)
@@ -69,6 +72,13 @@ Version 1.6 alpha
 OR
 
 * Click on **Reader** and go trough the text.
+
+# How to use with Facebook Live Video
+* Click on the FB Live button on the writer page
+* Log in with your facebook account
+* Start a public Facebook Live Video
+* The most recent Live Video comments will show in the area, Also there is a live emoticon counter.
+* Every 10 seconds is there a refresh.
 
 # Extra
 ### Style

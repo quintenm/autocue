@@ -1,0 +1,71 @@
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  font-size: 2em;
+}
+
+.comments {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 100%;
+}
+.comment {
+  margin: 1em 0;
+  width: 100%;
+}
+.comment:first-of-type {
+  margin-top: 0;
+}
+.comment h2 {
+  display: inline-block;
+  font-size: 1.1em;
+  margin: 0;
+}
+.comment .time {
+  float: right;
+  text-align: right;
+  color: #0ff;
+}
+.comment p {
+  margin: 0;
+}
+
+.error {
+  color: #f4a
+}
+
+.login {
+  display: none;
+  flex-grow: 1;
+}
+
+.countdown {
+  margin-top: auto;
+  width: 100vw;
+  height: 0.1em;
+  /*justify-content: flex-end;*/
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.reactions {
+  display: inline-block;
+  flex-grow: 1;
+}
+.reactionGroup {
+  display: inline-block;
+  height: 1em;
+  margin-right: 1em;
+}
+.reactionIcon {
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: text-top;
+}

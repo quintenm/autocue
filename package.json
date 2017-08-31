@@ -1,6 +1,6 @@
 {
   "name": "digipromp",
-  "version": "1.4.0",
+  "version": "1.7.0",
   "description": "A digital online autocue, for a faster way to communicate",
   "main": "server.js",
   "dependencies": {

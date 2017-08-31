@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Digital Autocue — online for a faster way to communicate</title>
+    <title>Digital Autocue — online for a faster way to communicate between social media and presentator</title>
     <link rel="stylesheet" href="../css/styles.min.css" media="screen">
     <link rel="stylesheet" href="../css/writer.min.css" media="screen" id="varCss">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   </head>
-  <body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal">
+  <body class="font-color-primary background-color-primary font-family-secundary readerStyle-One text-weight-regular text-transform-normal" style="display:flex;">
     <!-- default -->
-    <a onclick="launchFullscreen(document.documentElement);" class="fullscreen expand"></a>
+    <a href="#fullscreen" class="sectionNavigation fullscreen fa-expand"></a>
     <div class="overlay alert" style="display: none;">
       <p style="text-align:center;"><span class="alert-text"></span>
         <button href="#alertClose" class="sectionNavigation"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -60,6 +60,7 @@
             <button href="#writerScreenInfo" class="sectionNavigation"><i class="fa fa-info" aria-hidden="true"></i></button><br>
             <button href="#uploadpage" class="sectionNavigation">Upload <i class="fa fa-upload" aria-hidden="true"></i></button>
             <button href="#downloadButton" class="sectionNavigation">Download <i class="fa fa-download" aria-hidden="true"></i></button>
+            <button href="#facebookLiveButton" class="sectionNavigation"><i class="fa fa-facebook-square" aria-hidden="true"></i> Live <i class="fa fa-times facebookClose" style="display:none" aria-hidden="true"></i></button>
           </p>
         </div>
         <div>
@@ -67,19 +68,41 @@
             <br> It wil be displayed in Reader.</p>
         </div>
       </div>
-      <div>
-        <form id="inputForm" action="">
-          <input id="m" autocomplete="off" placeholder="Click to type ..." />
-          <button class="hidden">Send</button>
-        </form>
+      <div class="editContainer">
+        <div class="item" >
+          <form id="inputForm" action="">
+            <textarea id="m" autocomplete="off" placeholder="Click to type ..." ></textarea>
+            <button class="hidden">Send</button>
+          </form>
+        </div>
+        <div class="full infoScreen facebookLiveScreen item" style="display: none;">
+          <span class="partInformation">
+            <h3>Facebook Live Comments</h3>
+            <span>
+              <span class="login">To use this part, you must connect with <br><a data-action="login"><i class="fa fa-facebook-square" area-hidden="true"></i></a></span>
+              <span class="comments">Loading...</span>
+              <span class="reactions">
+                <span class="like reactionGroup"><img src="./../media/reaction-like.svg" class="reactionIcon" /><span class="count"></span></span>
+                <span class="love reactionGroup"><img src="./../media/reaction-love.svg" class="reactionIcon" /><span class="count"></span></span>
+                <span class="haha reactionGroup"><img src="./../media/reaction-haha.svg" class="reactionIcon" /><span class="count"></span></span>
+                <span class="wow reactionGroup"><img src="./../media/reaction-wow.svg" class="reactionIcon" /><span class="count"></span></span>
+                <span class="sad reactionGroup"><img src="./../media/reaction-sad.svg" class="reactionIcon" /><span class="count"></span></span>
+                <span class="angry reactionGroup"><img src="./../media/reaction-angry.svg" class="reactionIcon" /><span class="count"></span></span>
+              </span>
+              <progress class="countdown" value="0" max="30"></progress>
+            </span>
+          </span>
+        </div>
       </div>
+
     </section>
+
     <!-- end writer screen -->
     <!-- start scripts -->
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://use.fontawesome.com/6517cff0d0.js"></script>
-    <script src="../js/main_writer.min.js" charset="utf-8"></script>
+    <script src="../js/main_writer.js" charset="utf-8"></script>
     <script>
       (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;

@@ -121,6 +121,12 @@
    {
      text-shadow:0 0 10px $color;
    }
+   progress {
+     background-color: $color;
+   }
+   progress::-webkit-progress-bar {
+     background-color: $color;
+   }
   }
 }
 @each $type, $color in $background-color
@@ -131,7 +137,8 @@
     {
       color: $color;
     }
-    .overlay.full
+    .overlay.full,
+    .overlay.half
     {
       background-color:$color;
     }
@@ -176,6 +183,15 @@
     a.fullscreen:before
     {
       color:$color;
+    }
+    progress {
+      color: $color;
+    }
+    progress::-webkit-progress-value {
+      background-color: $color;
+    }
+    progress::-moz-progress-bar {
+      background-color: $color;
     }
   }
 }
